@@ -1,5 +1,4 @@
-window.addEventListener("load", (event) => {
-  console.log("page is fully loaded");
+window.addEventListener("load", () => {
   // Get the Object by ID
   const objectSVG = document.getElementById("body-svg");
   objectSVG.style.opacity = "1";
@@ -21,29 +20,39 @@ window.addEventListener("load", (event) => {
 
     bodyPart.addEventListener("mouseover", () => {
       initialColor = bodyPart.style.color;
-      if (bodyPart.style.color === "orange") return;
-      bodyPart.style.color = "#3a3a3a";
-      bodyPart.style.opacity = "1";
-      bodyPart.style.cursor = "pointer";
+      mouseOver(bodyPart);
     });
-
     bodyPart.addEventListener("mouseout", () => {
-      if (bodyPart.style.color === "orange") return;
-
-      bodyPart.style.color = initialColor;
+      mouseOut(initialColor, bodyPart);
     });
     bodyPart.addEventListener("click", () => {
       bodyPart.style.color = "orange";
-
-      for (let group of svgGroups) {
-        if (group.id !== bodyPart.id) {
-          let colorChange = "#8a8a8a";
-          group.style.color = colorChange;
-          initialColor = colorChange;
-        } else {
-          group.style.color = "orange";
-        }
-      }
+      onClick(svgGroups, bodyPart);
     });
   }
 });
+
+function mouseOver(bodyP) {
+  if (bodyP.style.color === "orange") return;
+  bodyP.style.color = "#3a3a3a";
+  bodyP.style.opacity = "1";
+  bodyP.style.cursor = "pointer";
+}
+function mouseOut(initialRColor, bodyP) {
+  let initC = "orange";
+  return bodyP.style.color === initC
+    ? initC
+    : (bodyP.style.color = initialRColor);
+}
+
+function onClick(svgG, bodyP) {
+  for (let group of svgG) {
+    if (group.id !== bodyP.id) {
+      let colorChange = "#8a8a8a";
+      group.style.color = colorChange;
+      initialColor = colorChange;
+    } else {
+      group.style.color = "orange";
+    }
+  }
+}
