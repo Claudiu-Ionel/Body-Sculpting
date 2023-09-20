@@ -13,7 +13,12 @@ window.addEventListener("load", (event) => {
 
   // event listeners added to body parts
   for (let bodyPart of svgGroups) {
+    // add transition animation on body parts
+    bodyPart.style.transition = "color 100ms ease-in";
+
+    // skip adding event listeners to fingers
     if (bodyPart.id === "hands-fingers") continue;
+
     bodyPart.addEventListener("mouseover", () => {
       initialColor = bodyPart.style.color;
       if (bodyPart.style.color === "orange") return;
