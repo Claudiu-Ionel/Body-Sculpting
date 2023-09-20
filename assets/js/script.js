@@ -1,6 +1,6 @@
 window.addEventListener("load", () => {
   // Get the Object by ID
-  const objectSVG = document.getElementById("body-svg");
+  const objectSVG = document.getElementById("body-svg-back");
   objectSVG.style.opacity = "1";
   // Get the SVG document inside the Object tag
   const svgDoc = objectSVG.contentDocument;
@@ -11,25 +11,7 @@ window.addEventListener("load", () => {
   let initialColor;
 
   // event listeners added to body parts
-  for (let bodyPart of svgGroups) {
-    // add transition animation on body parts
-    bodyPart.style.transition = "color 100ms ease-in";
-
-    // skip adding event listeners to fingers
-    if (bodyPart.id === "hands-fingers") continue;
-
-    bodyPart.addEventListener("mouseover", () => {
-      initialColor = bodyPart.style.color;
-      mouseOver(bodyPart);
-    });
-    bodyPart.addEventListener("mouseout", () => {
-      mouseOut(initialColor, bodyPart);
-    });
-    bodyPart.addEventListener("click", () => {
-      bodyPart.style.color = "orange";
-      onClick(svgGroups, bodyPart);
-    });
-  }
+  attachEventListeners(initialColor, svgGroups);
 });
 
 function mouseOver(bodyP) {
@@ -54,5 +36,27 @@ function onClick(svgG, bodyP) {
     } else {
       group.style.color = "orange";
     }
+  }
+}
+
+function attachEventListeners(initialCol, svgG) {
+  for (let bodyPart of svgG) {
+    // add transition animation on body parts
+    bodyPart.style.transition = "color 100ms ease-in";
+
+    // skip adding event listeners to fingers
+    if (bodyPart.id === "hands-fingers-back") continue;
+
+    bodyPart.addEventListener("mouseover", () => {
+      initialCol = bodyPart.style.color;
+      mouseOver(bodyPart);
+    });
+    bodyPart.addEventListener("mouseout", () => {
+      mouseOut(initialCol, bodyPart);
+    });
+    bodyPart.addEventListener("click", () => {
+      bodyPart.style.color = "orange";
+      onClick(svgG, bodyPart);
+    });
   }
 }
