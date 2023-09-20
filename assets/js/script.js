@@ -5,9 +5,13 @@ window.addEventListener("load", (event) => {
   objectSVG.style.opacity = "1";
   // Get the SVG document inside the Object tag
   const svgDoc = objectSVG.contentDocument;
-  // Get one of the SVG items by ID;
+  // Get the back side of the body svg;
   const svgGroups = svgDoc.getElementById("body-back").children;
+
+  // mouseover stores the color of the hovered body part and mouseout event sets the color back to initial.
   let initialColor;
+
+  // event listeners added to body parts
   for (let bodyPart of svgGroups) {
     if (bodyPart.id === "hands-fingers") continue;
     bodyPart.addEventListener("mouseover", () => {
