@@ -40,12 +40,10 @@ object {
   cursor: pointer;
 }
 #body-svg-front {
-  visibility: hidden;
+  visibility: visible;
 }
 #body-svg-back,
 #body-svg-front {
-  opacity: 0;
-
   max-width: 400px;
   height: 400px;
   margin-top: 20px;
@@ -57,6 +55,7 @@ object {
   align-items: center;
   flex-direction: column;
   width: 100%;
+  max-width: 650px;
   min-height: 400px;
   background-color: #fff;
   text-align: center;

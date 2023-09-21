@@ -6,7 +6,7 @@ window.addEventListener("load", () => {
   // Get the Object by ID
   const objectSVGBack = document.getElementById("body-svg-back");
   const objectSVGFront = document.getElementById("body-svg-front");
-  objectSVGBack.style.opacity = "1";
+  objectSVGFront.style.opacity = "1";
   // Get the SVG document inside the Object tag
   const svgDocBack = objectSVGBack.contentDocument;
   const svgDocFront = objectSVGFront.contentDocument;
@@ -30,6 +30,7 @@ window.addEventListener("load", () => {
   backBodyViewButton.addEventListener("click", () => {
     objectSVGBack.style.visibility = "visible";
     objectSVGFront.style.visibility = "hidden";
+    objectSVGBack.style.opacity = "1";
   });
 });
 
