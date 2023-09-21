@@ -1,19 +1,36 @@
 import { exercises } from "../data/data.js";
 
 window.addEventListener("load", () => {
+  const frontBodyViewButton = document.getElementById("front-body-button");
+  const backBodyViewButton = document.getElementById("back-body-button");
   // Get the Object by ID
-  const objectSVG = document.getElementById("body-svg-back");
-  objectSVG.style.opacity = "1";
+  const objectSVGBack = document.getElementById("body-svg-back");
+  const objectSVGFront = document.getElementById("body-svg-front");
+  objectSVGBack.style.opacity = "1";
   // Get the SVG document inside the Object tag
-  const svgDoc = objectSVG.contentDocument;
+  const svgDocBack = objectSVGBack.contentDocument;
+  const svgDocFront = objectSVGFront.contentDocument;
   // Get the back side of the body svg;
-  const svgGroups = svgDoc.getElementById("body-back").children;
+  const svgGroupsBack = svgDocBack.getElementById("body-back").children;
+  console.log(svgGroupsBack);
+  const svgGroupsFront = svgDocFront.getElementById("body-front").children;
+  const svgGroups = [...svgGroupsFront, ...svgGroupsBack];
 
   // mouseover stores the color of the hovered body part and mouseout event sets the color back to initial.
   let initialColor;
 
   // event listeners added to body parts
   attachEventListeners(initialColor, svgGroups);
+  // event listeners added to body view buttons
+  frontBodyViewButton.addEventListener("click", () => {
+    objectSVGBack.style.visibility = "hidden";
+    objectSVGFront.style.visibility = "visible";
+    objectSVGFront.style.opacity = "1";
+  });
+  backBodyViewButton.addEventListener("click", () => {
+    objectSVGBack.style.visibility = "visible";
+    objectSVGFront.style.visibility = "hidden";
+  });
 });
 
 function mouseOver(bodyP) {
@@ -40,7 +57,12 @@ function onClick(svgG, bodyP) {
       group.style.color = "orange";
     }
   }
+  // Add data to the exercise section
   addDataToExerciseSection(bodyP);
+
+  // Make the window to scroll down to the exercise section
+  const exercisesSection = document.getElementById("exercises-wrapper");
+  exercisesSection.scrollIntoView({ behavior: "smooth", block: "end" });
 }
 
 function attachEventListeners(initialCol, svgG) {
@@ -51,7 +73,7 @@ function attachEventListeners(initialCol, svgG) {
 
     // skip adding event listeners to fingers
     if (bodyPart.id === "hands-fingers-back") continue;
-
+    if (bodyPart.id === "hands-fingers-front") continue;
     bodyPart.addEventListener("mouseover", () => {
       initialCol = bodyPart.style.color;
       mouseOver(bodyPart);
@@ -79,7 +101,7 @@ function addDataToExerciseSection(bodyP) {
   <h3>${bodyPartData.description}</h3>
   <p>${bodyPartData["fun-fact"]}<p>
   <h4>Exercises: </h4>
-  
+
   `;
   exercisesSection.innerHTML = html;
 }
