@@ -76,6 +76,10 @@ function addDataToExerciseSection(bodyP) {
 
   let html = `
   <h2>${bodyPartData.title}</h2>
+  <h3>${bodyPartData.description}</h3>
+  <p>${bodyPartData["fun-fact"]}<p>
+  <h4>Exercises: </h4>
+  
   `;
   exercisesSection.innerHTML = html;
 }

@@ -33,10 +33,15 @@ main {
 
 #exercises-wrapper {
   display: none;
+  align-items: center;
+  flex-direction: column;
   width: 600px;
   height: 400px;
   background-color: #fff;
   text-align: center;
   padding: 20px;
   border-radius: 10px;
+}
+#exercises-wrapper > * {
+  margin-bottom: 10px;
 }
