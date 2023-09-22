@@ -105,5 +105,13 @@ function addDataToExerciseSection(bodyP) {
   <h4>Exercises: </h4>
 
   `;
+
+  // Add videos tutorials
+  for (const [key, value] of Object.entries(bodyPartData["exercises"])) {
+    console.log(`${key}: ${value}`);
+    html += `<h5>${key}</h5>
+    <iframe width="560" height="315" src=${value.videoUrl} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    `;
+  }
   exercisesSection.innerHTML = html;
 }
