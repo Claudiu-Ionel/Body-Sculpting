@@ -35,13 +35,14 @@ window.addEventListener("load", () => {
 });
 
 function mouseOver(bodyP) {
-  if (bodyP.style.color === "orange") return;
-  bodyP.style.color = "#3a3a3a";
+  console.log(bodyP.style.color);
+  if (bodyP.style.color === "rgb(255, 195, 0)") return;
+  bodyP.style.color = "rgb(255, 214, 10)";
   bodyP.style.opacity = "1";
   bodyP.style.cursor = "pointer";
 }
 function mouseOut(initialRColor, bodyP) {
-  let initC = "orange";
+  let initC = "rgb(255, 195, 0)";
   return bodyP.style.color === initC
     ? initC
     : (bodyP.style.color = initialRColor);
@@ -55,7 +56,7 @@ function onClick(svgG, bodyP) {
       group.style.color = colorChange;
       // initialColor = colorChange;
     } else {
-      group.style.color = "orange";
+      group.style.color = "rgb(255, 195, 0)";
     }
   }
   // Add data to the exercise section
@@ -83,7 +84,7 @@ function attachEventListeners(initialCol, svgG) {
       mouseOut(initialCol, bodyPart);
     });
     bodyPart.addEventListener("click", () => {
-      bodyPart.style.color = "orange";
+      bodyPart.style.color = "rgb(255, 195, 0)";
       onClick(svgG, bodyPart);
     });
   }
