@@ -19,6 +19,9 @@ window.addEventListener("load", () => {
   // mouseover stores the color of the hovered body part and mouseout event sets the color back to initial.
   let initialColor;
 
+  // data variable for exercise list
+  let exerciseListData = {};
+
   // event listeners added to body parts
   attachEventListeners(initialColor, svgGroups);
   // event listeners added to body view buttons
@@ -62,9 +65,9 @@ function onClick(svgG, bodyP) {
   // Add data to the exercise section
   addDataToExerciseSection(bodyP);
 
-  // Make the window to scroll down to the exercise section
+  // Make the window scroll down to the exercise section
   const exercisesSection = document.getElementById("exercises-wrapper");
-  exercisesSection.scrollIntoView({ behavior: "smooth", block: "end" });
+  exercisesSection.scrollIntoView({ behavior: "smooth", block: "start" });
 }
 
 function attachEventListeners(initialCol, svgG) {
@@ -73,9 +76,14 @@ function attachEventListeners(initialCol, svgG) {
     // add transition animation on body parts
     bodyPart.style.transition = "color 100ms ease-in";
 
-    // skip adding event listeners to fingers
+    // skip adding event listeners to some body parts - fingers and neck muscles
     if (bodyPart.id === "hands-fingers-back") continue;
     if (bodyPart.id === "hands-fingers-front") continue;
+    if (bodyPart.id === "head-front") continue;
+    if (bodyPart.id === "head-back") continue;
+    if (bodyPart.id === "legs-lower-back") continue;
+    if (bodyPart.id === "legs-lower-front") continue;
+
     bodyPart.addEventListener("mouseover", () => {
       initialCol = bodyPart.style.color;
       mouseOver(bodyPart);

@@ -271,16 +271,87 @@ export const exercises = {
     description: `The quadriceps, often referred to as the "quads," are a group of four muscles on the front of the thigh: the rectus femoris, vastus lateralis, vastus medialis, and vastus intermedius.`,
     "fun-fact":
       "The rectus femoris muscle of the quadriceps is unique because it also flexes the hip joint, in addition to extending the knee. This dual function makes it essential for movements like kicking, sprinting, and high knee lifts.",
-  },
-  abs: {
-    title: "Abdominal muscles",
-    description: `The abdominal muscles, often referred to as the abs, are a group of muscles located in the front and sides of the abdomen.`,
-    "fun-fact": `The abdominal muscles are known for creating the coveted "six-pack" appearance when well-defined.`,
+    exercises: {
+      Bulgarian: {
+        title: "Crescent Tucks",
+        videoUrl:
+          "https://www.youtube.com/embed/sDMAPXzvjAo?si=qeYOoqAHPOCGnXxv&amp;clip=Ugkx4wW4F6bopR97Z43fi9AX-KHK3qLzHIRg&amp;clipt=EJTxARiA9QM",
+      },
+      "Barbell RDL": {
+        title: "Barbell RDL",
+        videoUrl:
+          "https://www.youtube.com/embed/sDMAPXzvjAo?si=ivuQcTgyfw6UxhCo&amp;clip=UgkxuY1_H4fZXFZjulPrbsr3-Ae7PwBII54g&amp;clipt=EOqzBxjQ1Qo",
+      },
+      "Dumbbell reverse lounge": {
+        title: "Barbell RDL",
+        videoUrl:
+          "https://www.youtube.com/embed/sDMAPXzvjAo?si=RGk4Wfg2N7zilYPW&amp;clip=UgkxLAlqEuNtGt7NpHHLlBg1445sPPq6aF3P&amp;clipt=EIOKCxjK1A4",
+      },
+    },
   },
   "legs-upper-front": {
     title: "Thigh muscles",
     description: `The quadriceps, often referred to as the "quads," are a group of four muscles on the front of the thigh: the rectus femoris, vastus lateralis, vastus medialis, and vastus intermedius.`,
     "fun-fact":
       "The rectus femoris muscle of the quadriceps is unique because it also flexes the hip joint, in addition to extending the knee. This dual function makes it essential for movements like kicking, sprinting, and high knee lifts.",
+    exercises: {
+      Bulgarian: {
+        title: "Crescent Tucks",
+        videoUrl:
+          "https://www.youtube.com/embed/sDMAPXzvjAo?si=qeYOoqAHPOCGnXxv&amp;clip=Ugkx4wW4F6bopR97Z43fi9AX-KHK3qLzHIRg&amp;clipt=EJTxARiA9QM",
+      },
+      "Barbell RDL": {
+        title: "Barbell RDL",
+        videoUrl:
+          "https://www.youtube.com/embed/sDMAPXzvjAo?si=ivuQcTgyfw6UxhCo&amp;clip=UgkxuY1_H4fZXFZjulPrbsr3-Ae7PwBII54g&amp;clipt=EOqzBxjQ1Qo",
+      },
+      "Dumbbell reverse lounge": {
+        title: "Barbell RDL",
+        videoUrl:
+          "https://www.youtube.com/embed/sDMAPXzvjAo?si=RGk4Wfg2N7zilYPW&amp;clip=UgkxLAlqEuNtGt7NpHHLlBg1445sPPq6aF3P&amp;clipt=EIOKCxjK1A4",
+      },
+    },
+  },
+  abs: {
+    title: "Abdominal muscles",
+    description: `The abdominal muscles, often referred to as the abs, are a group of muscles located in the front and sides of the abdomen.`,
+    "fun-fact": `The abdominal muscles are known for creating the coveted "six-pack" appearance when well-defined.`,
+    exercises: {
+      "Crescent Tucks": {
+        title: "Crescent Tucks",
+        videoUrl:
+          "https://www.youtube.com/embed/i27K2ry9jEo?si=-KJIsd-GVWPywWQL&amp;clip=UgkxveYUlWi4TSKlBLb5QSX0AxloQVX-TUHQ&amp;clipt=EPB7GK7yAw",
+      },
+      "Backwards 7's": {
+        title: "Backwards 7's",
+        videoUrl:
+          "https://www.youtube.com/embed/i27K2ry9jEo?si=5bkW8SE1c6XFK209&amp;clip=Ugkxb1SyPLq9XNjJHEwROJ-w7KUawebdQXKK&amp;clipt=EJfkBBjewwc",
+      },
+      Swipers: {
+        title: "Swipers",
+        videoUrl:
+          "https://www.youtube.com/embed/i27K2ry9jEo?si=Kpe0Zt9ukYyUMppk&amp;clip=Ugkxhdp2nDs1BpXAttSHx2BYovK4RLD7yY9y&amp;clipt=ENmsCBjFmws",
+      },
+      "Side cycles": {
+        title: "Side cycles",
+        videoUrl:
+          "https://www.youtube.com/embed/i27K2ry9jEo?si=0RLzJZOGbC41q6Cw&amp;clip=Ugkx7mNUQPg6lxQYwaPZwfjQeCV1pT48gD-e&amp;clipt=ELiCDBjS6Q4",
+      },
+      "Mountain Hip Dips": {
+        title: "Mountain Hip Dips",
+        videoUrl:
+          "https://www.youtube.com/embed/i27K2ry9jEo?si=cnL1VeUXeTYY4YMz&amp;clip=UgkxXABHhAMoPAhcsohREdfyjOjzN6S8jEBI&amp;clipt=EJatExiCnBY",
+      },
+      "Frog V-Ups": {
+        title: "Frog V-Ups",
+        videoUrl:
+          "https://www.youtube.com/embed/i27K2ry9jEo?si=04JrStuQbi82jtGs&amp;clip=UgkxECoe6LS7UxcXt_5h5a3bFRoTE1RMuwsq&amp;clipt=ENXeFhjc8xk",
+      },
+      "Corpse crunch": {
+        title: "Corpse crunch",
+        videoUrl:
+          "https://www.youtube.com/embed/i27K2ry9jEo?si=uyTJx83pmDFFordJ&amp;clip=UgkxdAcbLRi6JEdVrcMYDnorOBspdvuEE5p9&amp;clipt=ENreIRjV7iQ",
+      },
+    },
   },
 };
