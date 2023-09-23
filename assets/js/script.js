@@ -20,10 +20,12 @@ window.addEventListener("load", () => {
   let initialColor;
 
   // data variable for exercise list
-  let exerciseListData = {};
+  let exerciseListData = {
+    "Crescent-Tucks": {},
+  };
 
   // event listeners added to body parts
-  attachEventListeners(initialColor, svgGroups);
+  attachEventListeners(initialColor, svgGroups, exerciseListData);
   // event listeners added to body view buttons
   frontBodyViewButton.addEventListener("click", () => {
     objectSVGBack.style.visibility = "hidden";
@@ -38,7 +40,6 @@ window.addEventListener("load", () => {
 });
 
 function mouseOver(bodyP) {
-  console.log(bodyP.style.color);
   if (bodyP.style.color === "rgb(255, 195, 0)") return;
   bodyP.style.color = "rgb(255, 214, 10)";
   bodyP.style.opacity = "1";
@@ -51,7 +52,7 @@ function mouseOut(initialRColor, bodyP) {
     : (bodyP.style.color = initialRColor);
 }
 
-function onClick(svgG, bodyP) {
+function onClick(svgG, bodyP, exerciseListData) {
   // Body parts functionality
   for (let group of svgG) {
     if (group.id !== bodyP.id) {
@@ -63,20 +64,19 @@ function onClick(svgG, bodyP) {
     }
   }
   // Add data to the exercise section
-  addDataToExerciseSection(bodyP);
+  addDataToExerciseSection(bodyP, exerciseListData);
 
   // Make the window scroll down to the exercise section
   const exercisesSection = document.getElementById("exercises-wrapper");
   exercisesSection.scrollIntoView({ behavior: "smooth", block: "start" });
 }
 
-function attachEventListeners(initialCol, svgG) {
+function attachEventListeners(initialCol, svgG, exerciseListData) {
   for (let bodyPart of svgG) {
-    console.log(bodyPart.id);
     // add transition animation on body parts
     bodyPart.style.transition = "color 100ms ease-in";
 
-    // skip adding event listeners to some body parts - fingers and neck muscles
+    // skip adding event listeners to some body parts - fingers / neck muscles / lower leg muscles
     if (bodyPart.id === "hands-fingers-back") continue;
     if (bodyPart.id === "hands-fingers-front") continue;
     if (bodyPart.id === "head-front") continue;
@@ -93,12 +93,12 @@ function attachEventListeners(initialCol, svgG) {
     });
     bodyPart.addEventListener("click", () => {
       bodyPart.style.color = "rgb(255, 195, 0)";
-      onClick(svgG, bodyPart);
+      onClick(svgG, bodyPart, exerciseListData);
     });
   }
 }
 
-function addDataToExerciseSection(bodyP) {
+function addDataToExerciseSection(bodyP, exerciseListData) {
   let bodyPartData = exercises[bodyP.id];
   // Make exercise section visible
   const exercisesSection = document.getElementById("exercises-wrapper");
@@ -117,9 +117,29 @@ function addDataToExerciseSection(bodyP) {
   // Add videos tutorials
   for (const [key, value] of Object.entries(bodyPartData["exercises"])) {
     console.log(`${key}: ${value}`);
-    html += `<h5>${key}</h5>
+    html += `<h5>${value.title}</h5>
     <iframe width="560" height="315" src=${value.videoUrl} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    <button class="add-exercise-button" data-exercise=${key}>Add Exercise</button>
     `;
   }
   exercisesSection.innerHTML = html;
+
+  const addExerciseButtons = document.getElementsByClassName(
+    "add-exercise-button"
+  );
+  // add event listeners to add exercise buttons
+  for (let button of addExerciseButtons) {
+    // Check if the exercise already exists in the exerciseListData - disable button
+    if (exerciseListData.hasOwnProperty(button.getAttribute("data-exercise"))) {
+      button.setAttribute("disabled", true);
+    }
+    button.addEventListener("click", (event) => {
+      addExercise(event);
+    });
+  }
+}
+
+function addExercise(event) {
+  console.log("test addExercise func");
+  event.target.setAttribute("disabled", true);
 }

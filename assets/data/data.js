@@ -19,7 +19,7 @@ export const exercises = {
     "fun-fact":
       "The pectoral muscles are one of the most iconic and often admired muscle groups, especially in fitness and bodybuilding circles",
     exercises: {
-      "Bench Press": {
+      "Bench-Press": {
         title: "Bench Press",
         videoUrl:
           "https://www.youtube.com/embed/vthMCtgVtFw?si=rk92tcwultkjbSQI",
@@ -30,12 +30,12 @@ export const exercises = {
         videoUrl:
           "https://www.youtube.com/embed/iIa2-uVHzM0?si=LYlUz8sfG76lMa2t",
       },
-      "Dumbbell Flyes": {
+      "Dumbbell-Flyes": {
         title: "Dumbbell Flyes",
         videoUrl:
           "https://www.youtube.com/embed/S298ziysRdI?si=NHAwqCzq6Gp7Rkuh",
       },
-      "Chest dips": {
+      "Chest-dips": {
         title: "Chest dips",
         videoUrl:
           "https://www.youtube.com/embed/vi1-BOcj3cQ?si=_v41RddkpdQLP94J",
@@ -47,7 +47,7 @@ export const exercises = {
     description: `The biceps serve multiple functions related to the forearm and arm. The primary function of the biceps is to flex the elbow joint, which means it allows you to bend your arm.`,
     "fun-fact": `The name "biceps" comes from the Latin words "bi," meaning "two," and "ceps," meaning "heads.`,
     exercises: {
-      "Standing dumbbell curls": {
+      "Standing-dumbbell-curls": {
         title: "Standing dumbbell curls",
         videoUrl:
           "https://www.youtube.com/embed/6g57DJntRXk?si=WK7GMYZComyvqqP6&amp;clip=Ugkx6-NMEyq-zMvQc5-TrSoTVdzRDjRkSnrQ&amp;clipt=EIKeNxiHwTg",
@@ -58,12 +58,12 @@ export const exercises = {
         videoUrl:
           "https://www.youtube.com/embed/iIa2-uVHzM0?si=LYlUz8sfG76lMa2t",
       },
-      "Dumbbell Flyes": {
+      "Dumbbell-Flyes": {
         title: "Dumbbell Flyes",
         videoUrl:
           "https://www.youtube.com/embed/S298ziysRdI?si=NHAwqCzq6Gp7Rkuh",
       },
-      "Chest dips": {
+      "Chest-dips": {
         title: "Chest dips",
         videoUrl:
           "https://www.youtube.com/embed/vi1-BOcj3cQ?si=_v41RddkpdQLP94J",
@@ -76,28 +76,28 @@ export const exercises = {
       "The back muscles are responsible for a wide range of movements involving the shoulder blades, arms, and spine. They allow you to pull, lift, and lower objects, as well as perform actions like pulling yourself up, rowing, and arching your back",
     "fun-fact": `The latissimus dorsi muscle, often referred to as the "lats," are the largest muscles in the human body and are responsible for much of the V-shape appearance of the upper body`,
     exercises: {
-      "Horizontal barbell row": {
+      "Horizontal-barbell-row": {
         title: "Horizontal barbell row",
         videoUrl:
           "https://www.youtube.com/embed/YvKOvyiAdAI?si=7FpB6cvZYUhc2cgq&amp;clip=Ugkxd_LSgQOBp-RqHtPumD-3yh6_frAoAXjC&amp;clipt=EKSfBRjXiAc",
       },
 
-      "Vertical lat pulldowns": {
+      "Vertical-lat-pulldowns": {
         title: "Vertical lat pulldowns",
         videoUrl:
           "https://www.youtube.com/embed/YvKOvyiAdAI?si=3k4t6Gpc7CVyH6GC&amp;clip=UgkxcE8oLFt7314BBJisBWS8BtMvz5_eDOtW&amp;clipt=EO79Chiz1gw",
       },
-      "Vertical high pulls": {
+      "Vertical-high-pulls": {
         title: "Vertical high pulls",
         videoUrl:
           "https://www.youtube.com/embed/YvKOvyiAdAI?si=zO7O0GYehgB6a_yM&amp;clip=Ugkxm48gw7E8i4rVfYgr59R2rh2rRGXV49uo&amp;clipt=EOT9ExjB4BU",
       },
-      "Seated cable rows": {
+      "Seated-cable-rows": {
         title: "Seated cable rows",
         videoUrl:
           "https://www.youtube.com/embed/YvKOvyiAdAI?si=GhKpQDXY_2ISFYTY&amp;clip=Ugkx6NdUo8VfkpkLwBYTtRo4xg7b4dgD4YgE&amp;clipt=ELOJDxjv-BA",
       },
-      "Underhand ROM pulldowns": {
+      "Underhand-ROM-pulldowns": {
         title: "Underhand ROM pulldowns",
         videoUrl:
           "https://www.youtube.com/embed/YvKOvyiAdAI?si=p0ifapo-s1iZCJCC&amp;clip=Ugkxr1YnwvvqWrYAgeVGUfWORBfsuf9EqW8B&amp;clipt=END3FxiSnxo",
@@ -111,23 +111,23 @@ export const exercises = {
     "fun-fact":
       "The deltoid muscles are named after the Greek letter delta (Δ) because of their triangular shape, resembling the uppercase delta symbol.",
     exercises: {
-      "Shoulder press": {
+      "Shoulder-press": {
         title: "Shoulder press",
         videoUrl:
           "https://www.youtube.com/embed/2N5P_iWkluQ?si=XXjx-oXq2AOjF4Yb",
       },
 
-      "Lateral raises": {
+      "Lateral-raises": {
         title: "Lateral raise",
         videoUrl:
           "https://www.youtube.com/embed/ENsp0DEryrM?si=9VKW_GqJIBQCqNgy",
       },
-      "Face pulls": {
+      "Face-pulls": {
         title: "Face pulls",
         videoUrl:
           "https://www.youtube.com/embed/eIq5CB9JfKE?si=4dwTyag8OIvnPSTt",
       },
-      "Front raises": {
+      "Front-raises": {
         title: "Front raise",
         videoUrl:
           "https://www.youtube.com/embed/T76xu0XjYTk?si=OR1Y1VfHFCCgaTeB",
@@ -141,23 +141,23 @@ export const exercises = {
     "fun-fact":
       "The deltoid muscles are named after the Greek letter delta (Δ) because of their triangular shape, resembling the uppercase delta symbol.",
     exercises: {
-      "Shoulder press": {
+      "Shoulder-press": {
         title: "Shoulder press",
         videoUrl:
           "https://www.youtube.com/embed/2N5P_iWkluQ?si=XXjx-oXq2AOjF4Yb",
       },
 
-      "Lateral raises": {
+      "Lateral-raises": {
         title: "Lateral raise",
         videoUrl:
           "https://www.youtube.com/embed/ENsp0DEryrM?si=9VKW_GqJIBQCqNgy",
       },
-      "Face pulls": {
+      "Face-pulls": {
         title: "Face pulls",
         videoUrl:
           "https://www.youtube.com/embed/eIq5CB9JfKE?si=4dwTyag8OIvnPSTt",
       },
-      "Front raises": {
+      "Front-raises": {
         title: "Front raise",
         videoUrl:
           "https://www.youtube.com/embed/T76xu0XjYTk?si=OR1Y1VfHFCCgaTeB",
@@ -171,7 +171,7 @@ export const exercises = {
     "fun-fact":
       "The triceps brachii is named for its three heads or muscle groups that make up its structure: the long head, lateral head, and medial head.",
     exercises: {
-      "Tricep pushdown": {
+      "Tricep-pushdown": {
         title: "Tricep pushdown",
         videoUrl:
           "https://www.youtube.com/embed/REWv05om0ho?si=2TQtY7LD-X7YwQzl",
@@ -191,18 +191,18 @@ export const exercises = {
     "fun-fact":
       "The forearm muscles include several distinct muscle groups. One of the most prominent is the flexor digitorum superficialis, which allows you to bend your fingers and make a fist.",
     exercises: {
-      "Reverse drag curl": {
+      "Reverse-drag-curl": {
         title: "Reverse drag curl",
         videoUrl:
           "https://www.youtube.com/embed/JJAxStcNZeo?si=DEK8ot0sj8vVQ72R&amp;clip=UgkxT77JkJAgdfHd-qeNNp1HS4CISIrhLMhX&amp;clipt=EK_-DBjkixA",
       },
 
-      "Hammer curls": {
+      "Hammer-curls": {
         title: "Hammer Curls",
         videoUrl:
           "https://www.youtube.com/embed/JJAxStcNZeo?si=WenZHYx6LpWtETC3&amp;clip=UgkxDNa0UIUsq8AeKETR-m5f8Qn9GXdnQCMh&amp;clipt=EJ6VEBi19RE",
       },
-      "Top down wrist curl": {
+      "Top-down-wrist-curl": {
         title: "Top down wrist curl",
         videoUrl:
           "https://www.youtube.com/embed/JJAxStcNZeo?si=Mf8DxiVacIPScRsS&amp;clip=UgkxfoWSz1g7tw2NdMuzUAVbd8uC1C0wIFOy&amp;clipt=EKLhFBiF_BY",
@@ -216,7 +216,7 @@ export const exercises = {
     "fun-fact":
       "The forearm muscles include several distinct muscle groups. One of the most prominent is the flexor digitorum superficialis, which allows you to bend your fingers and make a fist.",
     exercises: {
-      "Reverse drag curl": {
+      "Reverse-drag-curl": {
         title: "Reverse drag curl",
         videoUrl:
           "https://www.youtube.com/embed/JJAxStcNZeo?si=DEK8ot0sj8vVQ72R&amp;clip=UgkxT77JkJAgdfHd-qeNNp1HS4CISIrhLMhX&amp;clipt=EK_-DBjkixA",
@@ -226,7 +226,7 @@ export const exercises = {
         videoUrl:
           "https://www.youtube.com/embed/JJAxStcNZeo?si=WenZHYx6LpWtETC3&amp;clip=UgkxDNa0UIUsq8AeKETR-m5f8Qn9GXdnQCMh&amp;clipt=EJ6VEBi19RE",
       },
-      "Top down wrist curl": {
+      "Top-down-wrist-curl": {
         title: "Top down wrist curl",
         videoUrl:
           "https://www.youtube.com/embed/JJAxStcNZeo?si=Mf8DxiVacIPScRsS&amp;clip=UgkxfoWSz1g7tw2NdMuzUAVbd8uC1C0wIFOy&amp;clipt=EKLhFBiF_BY",
@@ -240,7 +240,7 @@ export const exercises = {
     "fun-fact":
       "The gluteus maximus is one of the strongest muscles in the human body and is particularly well-developed in individuals who engage in activities like weightlifting, sprinting, and dancing",
     exercises: {
-      "Low bar squat": {
+      "Low-bar-squat": {
         title: "Low bar squat",
         videoUrl:
           "https://www.youtube.com/embed/pXrlpwmdpI4?si=4MtB6vyQMTRUZtw7&amp;clip=Ugkxs6AYilUiDkLfLQuoquj7O6KQU4gElUJf&amp;clipt=EJPUBBj7lQc",
@@ -272,17 +272,17 @@ export const exercises = {
     "fun-fact":
       "The rectus femoris muscle of the quadriceps is unique because it also flexes the hip joint, in addition to extending the knee. This dual function makes it essential for movements like kicking, sprinting, and high knee lifts.",
     exercises: {
-      Bulgarian: {
-        title: "Crescent Tucks",
+      "Bulgarian-split-squats": {
+        title: "Bulgarian split squats",
         videoUrl:
           "https://www.youtube.com/embed/sDMAPXzvjAo?si=qeYOoqAHPOCGnXxv&amp;clip=Ugkx4wW4F6bopR97Z43fi9AX-KHK3qLzHIRg&amp;clipt=EJTxARiA9QM",
       },
-      "Barbell RDL": {
+      "Barbell-RDL": {
         title: "Barbell RDL",
         videoUrl:
           "https://www.youtube.com/embed/sDMAPXzvjAo?si=ivuQcTgyfw6UxhCo&amp;clip=UgkxuY1_H4fZXFZjulPrbsr3-Ae7PwBII54g&amp;clipt=EOqzBxjQ1Qo",
       },
-      "Dumbbell reverse lounge": {
+      "Dumbbell-reverse-lounge": {
         title: "Barbell RDL",
         videoUrl:
           "https://www.youtube.com/embed/sDMAPXzvjAo?si=RGk4Wfg2N7zilYPW&amp;clip=UgkxLAlqEuNtGt7NpHHLlBg1445sPPq6aF3P&amp;clipt=EIOKCxjK1A4",
@@ -295,17 +295,17 @@ export const exercises = {
     "fun-fact":
       "The rectus femoris muscle of the quadriceps is unique because it also flexes the hip joint, in addition to extending the knee. This dual function makes it essential for movements like kicking, sprinting, and high knee lifts.",
     exercises: {
-      Bulgarian: {
-        title: "Crescent Tucks",
+      "Bulgarian-split-squats": {
+        title: "Bulgarian split squats",
         videoUrl:
           "https://www.youtube.com/embed/sDMAPXzvjAo?si=qeYOoqAHPOCGnXxv&amp;clip=Ugkx4wW4F6bopR97Z43fi9AX-KHK3qLzHIRg&amp;clipt=EJTxARiA9QM",
       },
-      "Barbell RDL": {
+      "Barbell-RDL": {
         title: "Barbell RDL",
         videoUrl:
           "https://www.youtube.com/embed/sDMAPXzvjAo?si=ivuQcTgyfw6UxhCo&amp;clip=UgkxuY1_H4fZXFZjulPrbsr3-Ae7PwBII54g&amp;clipt=EOqzBxjQ1Qo",
       },
-      "Dumbbell reverse lounge": {
+      "Dumbbell-reverse-lounge": {
         title: "Barbell RDL",
         videoUrl:
           "https://www.youtube.com/embed/sDMAPXzvjAo?si=RGk4Wfg2N7zilYPW&amp;clip=UgkxLAlqEuNtGt7NpHHLlBg1445sPPq6aF3P&amp;clipt=EIOKCxjK1A4",
@@ -317,12 +317,12 @@ export const exercises = {
     description: `The abdominal muscles, often referred to as the abs, are a group of muscles located in the front and sides of the abdomen.`,
     "fun-fact": `The abdominal muscles are known for creating the coveted "six-pack" appearance when well-defined.`,
     exercises: {
-      "Crescent Tucks": {
+      "Crescent-Tucks": {
         title: "Crescent Tucks",
         videoUrl:
           "https://www.youtube.com/embed/i27K2ry9jEo?si=-KJIsd-GVWPywWQL&amp;clip=UgkxveYUlWi4TSKlBLb5QSX0AxloQVX-TUHQ&amp;clipt=EPB7GK7yAw",
       },
-      "Backwards 7's": {
+      "Backwards-7's": {
         title: "Backwards 7's",
         videoUrl:
           "https://www.youtube.com/embed/i27K2ry9jEo?si=5bkW8SE1c6XFK209&amp;clip=Ugkxb1SyPLq9XNjJHEwROJ-w7KUawebdQXKK&amp;clipt=EJfkBBjewwc",
@@ -332,22 +332,22 @@ export const exercises = {
         videoUrl:
           "https://www.youtube.com/embed/i27K2ry9jEo?si=Kpe0Zt9ukYyUMppk&amp;clip=Ugkxhdp2nDs1BpXAttSHx2BYovK4RLD7yY9y&amp;clipt=ENmsCBjFmws",
       },
-      "Side cycles": {
+      "Side-cycles": {
         title: "Side cycles",
         videoUrl:
           "https://www.youtube.com/embed/i27K2ry9jEo?si=0RLzJZOGbC41q6Cw&amp;clip=Ugkx7mNUQPg6lxQYwaPZwfjQeCV1pT48gD-e&amp;clipt=ELiCDBjS6Q4",
       },
-      "Mountain Hip Dips": {
+      "Mountain-Hip-Dips": {
         title: "Mountain Hip Dips",
         videoUrl:
           "https://www.youtube.com/embed/i27K2ry9jEo?si=cnL1VeUXeTYY4YMz&amp;clip=UgkxXABHhAMoPAhcsohREdfyjOjzN6S8jEBI&amp;clipt=EJatExiCnBY",
       },
-      "Frog V-Ups": {
+      "Frog-V-Ups": {
         title: "Frog V-Ups",
         videoUrl:
           "https://www.youtube.com/embed/i27K2ry9jEo?si=04JrStuQbi82jtGs&amp;clip=UgkxECoe6LS7UxcXt_5h5a3bFRoTE1RMuwsq&amp;clipt=ENXeFhjc8xk",
       },
-      "Corpse crunch": {
+      "Corpse-crunch": {
         title: "Corpse crunch",
         videoUrl:
           "https://www.youtube.com/embed/i27K2ry9jEo?si=uyTJx83pmDFFordJ&amp;clip=UgkxdAcbLRi6JEdVrcMYDnorOBspdvuEE5p9&amp;clipt=ENreIRjV7iQ",
