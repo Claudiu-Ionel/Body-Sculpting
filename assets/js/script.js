@@ -169,7 +169,7 @@ function addExercise(event, bodyPartData, exerciseList) {
   // set data to exerciseList object and proxy
   exerciseList[keyName] = bodyPartData.exercises[keyName];
   // add html to exercise list section
-  let exerciseListHtml = `<p>${exerciseList[keyName].title}</p>`;
+  let exerciseListHtml = `<div>${exerciseList[keyName].title}</div>`;
 
   document.getElementById("exercise-list").innerHTML += exerciseListHtml;
 }

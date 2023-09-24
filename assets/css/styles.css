@@ -82,10 +82,10 @@ iframe {
   background-color: #fff;
   display: flex;
   flex-direction: column;
-
+  gap: 10px;
   width: 0px;
   height: 100%;
-  position: absolute;
+  position: fixed;
   right: 0;
   top: 0;
   transition: width 200ms ease-in;
