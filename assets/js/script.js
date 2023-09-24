@@ -12,7 +12,7 @@ window.addEventListener("load", () => {
   const svgDocFront = objectSVGFront.contentDocument;
   // Get the back side of the body svg;
   const svgGroupsBack = svgDocBack.getElementById("body-back").children;
-  console.log(svgGroupsBack);
+
   const svgGroupsFront = svgDocFront.getElementById("body-front").children;
   const svgGroups = [...svgGroupsFront, ...svgGroupsBack];
 
@@ -137,7 +137,6 @@ function addDataToExerciseSection(bodyP, exerciseListDataProxy) {
 
   // Add videos tutorials
   for (const [key, value] of Object.entries(bodyPartData["exercises"])) {
-    console.log(`${key}: ${value}`);
     html += `<h5>${value.title}</h5>
     <iframe width="560" height="315" src=${value.videoUrl} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
     <button class="add-exercise-button" data-exercise=${key}>Add Exercise</button>
@@ -163,7 +162,14 @@ function addDataToExerciseSection(bodyP, exerciseListDataProxy) {
 }
 
 function addExercise(event, bodyPartData, exerciseList) {
+  // on click disable button so that the exercise cannot be added again
   event.target.setAttribute("disabled", true);
+  // the button has data-exercise attribute that has the same key name as in the data.js file
   const keyName = event.target.getAttribute("data-exercise");
+  // set data to exerciseList object and proxy
   exerciseList[keyName] = bodyPartData.exercises[keyName];
+  // add html to exercise list section
+  let exerciseListHtml = `<p>${exerciseList[keyName].title}</p>`;
+
+  document.getElementById("exercise-list").innerHTML += exerciseListHtml;
 }
