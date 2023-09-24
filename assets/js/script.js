@@ -21,9 +21,8 @@ window.addEventListener("load", () => {
 
   // data variable for exercise list
   let exerciseListData = {
-    "Crescent-Tucks": {},
   };
-  var exerciseListDataProxy = new Proxy(exerciseListData, {
+  let exerciseListDataProxy = new Proxy(exerciseListData, {
     get: function (obj, name) {
       console.log("read request to " + name + " property");
       if (obj.hasOwnProperty(name)) return obj[name];
@@ -168,8 +167,21 @@ function addExercise(event, bodyPartData, exerciseList) {
   const keyName = event.target.getAttribute("data-exercise");
   // set data to exerciseList object and proxy
   exerciseList[keyName] = bodyPartData.exercises[keyName];
+
+  const time = exerciseList[keyName].time;
+  const reps = exerciseList[keyName].reps;
+  const sets = exerciseList[keyName].sets;
+  const breaks = exerciseList[keyName].breaks;
   // add html to exercise list section
-  let exerciseListHtml = `<div>${exerciseList[keyName].title}</div>`;
+  let exerciseListHtml = `<div>
+  <p>${exerciseList[keyName].title}</p>
+  <div class="exercise-info">
+  <span>Time:${time}s per rep</span>
+  <span>Reps:${reps} reps</span>
+  <span>Sets:${sets} </span>
+  <span>Break:${breaks * sets}s</span>
+  </div>
+  </div>`;
 
   document.getElementById("exercise-list").innerHTML += exerciseListHtml;
 }
