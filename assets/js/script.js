@@ -25,16 +25,17 @@ window.addEventListener("load", () => {
   let exerciseListDataProxy = new Proxy(exerciseListData, {
     get: function (obj, name) {
       console.log("read request to " + name + " property");
-      if (obj.hasOwnProperty(name)) return obj[name];
-      else return false;
+      return Reflect.get(obj[name]);
     },
-    set: function (obj, name, value) {
-      if (obj.hasOwnProperty(name)) return;
-      obj[name] = value;
+    set: function (target, key, value) {
       console.log(
         `set request to exerciseListData with key: ${name} value:`,
         value
+
       );
+      return Reflect.set(...arguments)
+      // proxyAddExercise(obj, name)
+      // console.log(obj)
     },
     hasProperty(target, key) {
       if (key[0] === "_") {
@@ -45,7 +46,7 @@ window.addEventListener("load", () => {
   });
 
   // event listeners added to body parts
-  attachEventListeners(initialColor, svgGroups, exerciseListData);
+  attachEventListeners(initialColor, svgGroups, exerciseListDataProxy);
   // event listeners added to body view buttons
   frontBodyViewButton.addEventListener("click", () => {
     objectSVGBack.style.visibility = "hidden";
@@ -149,13 +150,13 @@ function addDataToExerciseSection(bodyP, exerciseListDataProxy) {
   // add event listeners to add exercise buttons
   for (let button of addExerciseButtons) {
     let bodyPartD = bodyPartData;
-    let exerciseList = exerciseListDataProxy;
+    exerciseListDataProxy;
     // Check if the exercise already exists in the exerciseListData - disable button
-    if (button.getAttribute("data-exercise") in exerciseList) {
+    if (button.getAttribute("data-exercise") in exerciseListDataProxy) {
       button.setAttribute("disabled", true);
     }
     button.addEventListener("click", (event) => {
-      addExercise(event, bodyPartD, exerciseList);
+      addExercise(event, bodyPartD, exerciseListDataProxy);
     });
   }
 }
@@ -166,22 +167,52 @@ function addExercise(event, bodyPartData, exerciseList) {
   // the button has data-exercise attribute that has the same key name as in the data.js file
   const keyName = event.target.getAttribute("data-exercise");
   // set data to exerciseList object and proxy
-  exerciseList[keyName] = bodyPartData.exercises[keyName];
+  // const data = { ...bodyPartData.exercises[keyName] }
+  // console.log(data)
+  exerciseList[keyName] = { ...bodyPartData.exercises[keyName] }
 
-  const time = exerciseList[keyName].time;
-  const reps = exerciseList[keyName].reps;
-  const sets = exerciseList[keyName].sets;
-  const breaks = exerciseList[keyName].breaks;
+  addDifficultySection(bodyPartData.exercises[keyName], keyName)
+
+}
+
+function addDifficultySection(obj, keyName) {
+  console.log(obj)
+  const title = obj.title
   // add html to exercise list section
+
   let exerciseListHtml = `<div>
-  <p>${exerciseList[keyName].title}</p>
-  <div class="exercise-info">
-  <span>Time:${time}s per rep</span>
-  <span>Reps:${reps} reps</span>
-  <span>Sets:${sets} </span>
-  <span>Break:${breaks * sets}s</span>
+  <p>${title}</p>
+  <div class="exercise-info" id=${keyName}>
+  Difficulty: 
+  <button class="difficulty-button easy" data-difficulty="easy">Easy</button>
+  <button class="difficulty-button medium" data-difficulty="medium">Medium</button>
+  <button class="difficulty-button hard" data-difficulty="hard">Hard</button>
   </div>
   </div>`;
-
   document.getElementById("exercise-list").innerHTML += exerciseListHtml;
+  const difficultyButtons = document.getElementsByClassName("difficulty-button")
+  for (let button of difficultyButtons) {
+    let difficultyAttribute = button.getAttribute("data-difficulty")
+    button.addEventListener("click", () => {
+      obj.difficulty = difficultyAttribute;
+      difficultyHandler(difficultyAttribute, obj, keyName)
+    })
+  }
+
+}
+
+function difficultyHandler(difficulty, obj, keyName) {
+  console.log(obj)
+  let percentage;
+  if (difficulty === "easy") percentage = 50 / 100;
+  if (difficulty === "medium") percentage = 100 / 100;
+  if (difficulty === "hard") percentage = 150 / 100;
+  console.log(percentage)
+  let html = `
+  <span>Time:${obj.time}s per rep</span>
+  <span>Reps:${obj.reps * percentage} reps</span>
+  <span>Sets:${obj.sets * percentage} </span>
+  <span>Break:${obj.breaks * obj.sets}s</span>
+  `;
+  document.getElementById(keyName).innerHTML = html;
 }

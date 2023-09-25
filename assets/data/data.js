@@ -26,6 +26,7 @@ export const exercises = {
         reps: 12,
         sets: 2,
         breaks: 60,
+        difficulty: null,
       },
 
       Pushups: {
@@ -35,6 +36,7 @@ export const exercises = {
         reps: 12,
         sets: 2,
         breaks: 60,
+        difficulty: null,
       },
       'Dumbbell-Flyes': {
         title: 'Dumbbell Flyes',
@@ -43,6 +45,7 @@ export const exercises = {
         reps: 12,
         sets: 2,
         breaks: 60,
+        difficulty: null,
       },
       'Chest-dips': {
         title: 'Chest dips',
@@ -51,6 +54,7 @@ export const exercises = {
         reps: 12,
         sets: 2,
         breaks: 60,
+        difficulty: null,
       },
     },
   },
@@ -67,6 +71,7 @@ export const exercises = {
         reps: 12,
         sets: 2,
         breaks: 60,
+        difficulty: null,
       },
 
       Pushups: {
@@ -76,6 +81,7 @@ export const exercises = {
         reps: 12,
         sets: 2,
         breaks: 60,
+        difficulty: null,
       },
       'Dumbbell-Flyes': {
         title: 'Dumbbell Flyes',
@@ -84,6 +90,7 @@ export const exercises = {
         reps: 12,
         sets: 2,
         breaks: 60,
+        difficulty: null,
       },
       'Chest-dips': {
         title: 'Chest dips',
@@ -92,6 +99,7 @@ export const exercises = {
         reps: 12,
         sets: 2,
         breaks: 60,
+        difficulty: null,
       },
     },
   },
@@ -109,6 +117,7 @@ export const exercises = {
         reps: 12,
         sets: 2,
         breaks: 60,
+        difficulty: null,
       },
 
       'Vertical-lat-pulldowns': {
@@ -119,6 +128,7 @@ export const exercises = {
         reps: 12,
         sets: 2,
         breaks: 60,
+        difficulty: null,
       },
       'Vertical-high-pulls': {
         title: 'Vertical high pulls',
@@ -128,6 +138,7 @@ export const exercises = {
         reps: 12,
         sets: 2,
         breaks: 60,
+        difficulty: null,
       },
       'Seated-cable-rows': {
         title: 'Seated cable rows',
@@ -137,6 +148,7 @@ export const exercises = {
         reps: 12,
         sets: 2,
         breaks: 60,
+        difficulty: null,
       },
       'Underhand-ROM-pulldowns': {
         title: 'Underhand ROM pulldowns',
@@ -146,6 +158,7 @@ export const exercises = {
         reps: 12,
         sets: 2,
         breaks: 60,
+        difficulty: null,
       },
     },
   },
@@ -163,6 +176,7 @@ export const exercises = {
         reps: 12,
         sets: 2,
         breaks: 60,
+        difficulty: null,
       },
 
       'Lateral-raises': {
@@ -172,6 +186,7 @@ export const exercises = {
         reps: 12,
         sets: 2,
         breaks: 60,
+        difficulty: null,
       },
       'Face-pulls': {
         title: 'Face pulls',
@@ -180,6 +195,7 @@ export const exercises = {
         reps: 12,
         sets: 2,
         breaks: 60,
+        difficulty: null,
       },
       'Front-raises': {
         title: 'Front raise',
@@ -188,6 +204,7 @@ export const exercises = {
         reps: 12,
         sets: 2,
         breaks: 60,
+        difficulty: null,
       },
     },
   },
@@ -205,6 +222,7 @@ export const exercises = {
         reps: 12,
         sets: 2,
         breaks: 60,
+        difficulty: null,
       },
 
       'Lateral-raises': {
@@ -214,6 +232,7 @@ export const exercises = {
         reps: 12,
         sets: 2,
         breaks: 60,
+        difficulty: null,
       },
       'Face-pulls': {
         title: 'Face pulls',
@@ -222,6 +241,7 @@ export const exercises = {
         reps: 12,
         sets: 2,
         breaks: 60,
+        difficulty: null,
       },
       'Front-raises': {
         title: 'Front raise',
@@ -230,6 +250,7 @@ export const exercises = {
         reps: 12,
         sets: 2,
         breaks: 60,
+        difficulty: null,
       },
     },
   },
@@ -247,6 +268,7 @@ export const exercises = {
         reps: 12,
         sets: 2,
         breaks: 60,
+        difficulty: null,
       },
 
       Skullcrushers: {
@@ -256,6 +278,7 @@ export const exercises = {
         reps: 12,
         sets: 2,
         breaks: 60,
+        difficulty: null,
       },
     },
   },
@@ -274,6 +297,7 @@ export const exercises = {
         reps: 12,
         sets: 2,
         breaks: 60,
+        difficulty: null,
       },
 
       'Hammer-curls': {
@@ -284,6 +308,7 @@ export const exercises = {
         reps: 12,
         sets: 2,
         breaks: 60,
+        difficulty: null,
       },
       'Top-down-wrist-curl': {
         title: 'Top down wrist curl',
@@ -293,6 +318,7 @@ export const exercises = {
         reps: 12,
         sets: 2,
         breaks: 60,
+        difficulty: null,
       },
     },
   },
@@ -311,6 +337,7 @@ export const exercises = {
         reps: 12,
         sets: 2,
         breaks: 60,
+        difficulty: null,
       },
       'Hammer curls': {
         title: 'Hammer Curls',
@@ -320,6 +347,7 @@ export const exercises = {
         reps: 12,
         sets: 2,
         breaks: 60,
+        difficulty: null,
       },
       'Top-down-wrist-curl': {
         title: 'Top down wrist curl',
@@ -329,6 +357,7 @@ export const exercises = {
         reps: 12,
         sets: 2,
         breaks: 60,
+        difficulty: null,
       },
     },
   },
@@ -347,6 +376,7 @@ export const exercises = {
         reps: 12,
         sets: 2,
         breaks: 60,
+        difficulty: null,
       },
       'Hip thrusts': {
         title: 'Hip Thrusts',
@@ -356,6 +386,7 @@ export const exercises = {
         reps: 12,
         sets: 2,
         breaks: 60,
+        difficulty: null,
       },
     },
   },
@@ -387,6 +418,7 @@ export const exercises = {
         reps: 12,
         sets: 2,
         breaks: 60,
+        difficulty: null,
       },
       'Barbell-RDL': {
         title: 'Barbell RDL',
@@ -396,6 +428,7 @@ export const exercises = {
         reps: 12,
         sets: 2,
         breaks: 60,
+        difficulty: null,
       },
       'Dumbbell-reverse-lounge': {
         title: 'Barbell RDL',
@@ -405,6 +438,7 @@ export const exercises = {
         reps: 12,
         sets: 2,
         breaks: 60,
+        difficulty: null,
       },
     },
   },
@@ -422,6 +456,7 @@ export const exercises = {
         reps: 12,
         sets: 2,
         breaks: 60,
+        difficulty: null,
       },
       'Barbell-RDL': {
         title: 'Barbell RDL',
@@ -431,6 +466,7 @@ export const exercises = {
         reps: 12,
         sets: 2,
         breaks: 60,
+        difficulty: null,
       },
       'Dumbbell-reverse-lounge': {
         title: 'Barbell RDL',
@@ -440,6 +476,7 @@ export const exercises = {
         reps: 12,
         sets: 2,
         breaks: 60,
+        difficulty: null,
       },
     },
   },
@@ -456,6 +493,7 @@ export const exercises = {
         reps: 12,
         sets: 2,
         breaks: 60,
+        difficulty: null,
       },
       "Backwards-7's": {
         title: "Backwards 7's",
@@ -465,6 +503,7 @@ export const exercises = {
         reps: 12,
         sets: 2,
         breaks: 60,
+        difficulty: null,
       },
       Swipers: {
         title: 'Swipers',
@@ -474,6 +513,7 @@ export const exercises = {
         reps: 12,
         sets: 2,
         breaks: 60,
+        difficulty: null,
       },
       'Side-cycles': {
         title: 'Side cycles',
@@ -483,6 +523,7 @@ export const exercises = {
         reps: 12,
         sets: 2,
         breaks: 60,
+        difficulty: null,
       },
       'Mountain-Hip-Dips': {
         title: 'Mountain Hip Dips',
@@ -492,6 +533,7 @@ export const exercises = {
         reps: 12,
         sets: 2,
         breaks: 60,
+        difficulty: null,
       },
       'Frog-V-Ups': {
         title: 'Frog V-Ups',
@@ -501,6 +543,7 @@ export const exercises = {
         reps: 12,
         sets: 2,
         breaks: 60,
+        difficulty: null,
       },
       'Corpse-crunch': {
         title: 'Corpse crunch',
@@ -510,6 +553,7 @@ export const exercises = {
         reps: 12,
         sets: 2,
         breaks: 60,
+        difficulty: null,
       },
     },
   },
