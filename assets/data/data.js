@@ -395,7 +395,7 @@ export const exercises = {
         breaks: 60,
         difficulty: null,
       },
-      "Hip thrusts": {
+      "Hip-thrusts": {
         title: "Hip Thrusts",
         videoUrl:
           "https://www.youtube.com/embed/pXrlpwmdpI4?si=h6ZoL4SxmXQDE6y3&amp;clip=UgkxGqeG-PQxToWz__fVRDTVpV9MWRRm3-kN&amp;clipt=EKjICRjNgg0",
