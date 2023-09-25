@@ -29,6 +29,7 @@ object {
   flex-direction: column;
   margin-bottom: 10px;
   width: 100%;
+  max-width: 250px;
   height: 500px;
   position: relative;
 }
@@ -38,7 +39,7 @@ object {
   background-color: #fff;
   position: absolute;
   top: 60px;
-  left: 41%;
+  left: 20%;
   border: none;
   border-radius: 10px;
   z-index: 2;
