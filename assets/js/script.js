@@ -20,8 +20,7 @@ window.addEventListener("load", () => {
   let initialColor;
 
   // data variable for exercise list
-  let exerciseListData = {
-  };
+  let exerciseListData = {};
   let exerciseListDataProxy = new Proxy(exerciseListData, {
     get: function (obj, name) {
       console.log("read request to " + name + " property");
@@ -31,9 +30,8 @@ window.addEventListener("load", () => {
       console.log(
         `set request to exerciseListData with key: ${name} value:`,
         value
-
       );
-      return Reflect.set(...arguments)
+      return Reflect.set(...arguments);
       // proxyAddExercise(obj, name)
       // console.log(obj)
     },
@@ -150,7 +148,6 @@ function addDataToExerciseSection(bodyP, exerciseListDataProxy) {
   // add event listeners to add exercise buttons
   for (let button of addExerciseButtons) {
     let bodyPartD = bodyPartData;
-    exerciseListDataProxy;
     // Check if the exercise already exists in the exerciseListData - disable button
     if (button.getAttribute("data-exercise") in exerciseListDataProxy) {
       button.setAttribute("disabled", true);
@@ -169,45 +166,46 @@ function addExercise(event, bodyPartData, exerciseList) {
   // set data to exerciseList object and proxy
   // const data = { ...bodyPartData.exercises[keyName] }
   // console.log(data)
-  exerciseList[keyName] = { ...bodyPartData.exercises[keyName] }
+  exerciseList[keyName] = { ...bodyPartData.exercises[keyName] };
 
-  addDifficultySection(bodyPartData.exercises[keyName], keyName)
-
+  addDifficultySection(bodyPartData.exercises[keyName], keyName);
 }
 
 function addDifficultySection(obj, keyName) {
-  console.log(obj)
-  const title = obj.title
+  console.log(keyName);
+  console.log(obj);
+  const title = obj.title;
   // add html to exercise list section
 
   let exerciseListHtml = `<div>
   <p>${title}</p>
   <div class="exercise-info" id=${keyName}>
   Difficulty: 
-  <button class="difficulty-button easy" data-difficulty="easy">Easy</button>
-  <button class="difficulty-button medium" data-difficulty="medium">Medium</button>
-  <button class="difficulty-button hard" data-difficulty="hard">Hard</button>
+  <button class="difficulty-button easy" data-difficulty="easy" data-targetID=${keyName}>Easy</button>
+  <button class="difficulty-button medium" data-difficulty="medium" data-targetID=${keyName}>Medium</button>
+  <button class="difficulty-button hard" data-difficulty="hard" data-targetID=${keyName}>Hard</button>
   </div>
   </div>`;
   document.getElementById("exercise-list").innerHTML += exerciseListHtml;
-  const difficultyButtons = document.getElementsByClassName("difficulty-button")
+  const difficultyButtons =
+    document.getElementsByClassName("difficulty-button");
   for (let button of difficultyButtons) {
-    let difficultyAttribute = button.getAttribute("data-difficulty")
+    let exerciseInfoId = button.getAttribute("data-targetID");
+    let difficultyAttribute = button.getAttribute("data-difficulty");
     button.addEventListener("click", () => {
       obj.difficulty = difficultyAttribute;
-      difficultyHandler(difficultyAttribute, obj, keyName)
-    })
+      difficultyHandler(difficultyAttribute, obj, exerciseInfoId);
+    });
   }
-
 }
 
 function difficultyHandler(difficulty, obj, keyName) {
-  console.log(obj)
+  console.log(obj);
   let percentage;
   if (difficulty === "easy") percentage = 50 / 100;
   if (difficulty === "medium") percentage = 100 / 100;
   if (difficulty === "hard") percentage = 150 / 100;
-  console.log(percentage)
+  console.log(percentage);
   let html = `
   <span>Time:${obj.time}s per rep</span>
   <span>Reps:${obj.reps * percentage} reps</span>
