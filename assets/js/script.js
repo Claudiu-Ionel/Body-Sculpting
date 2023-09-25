@@ -72,6 +72,12 @@ function mouseOut(initialRColor, bodyP) {
 }
 
 function onClick(svgG, bodyP, exerciseListDataProxy) {
+  // possible messages for message div
+  const messages = [
+    { message: "Hell Yeah!", left: "42%" },
+    { message: "Pump those muscles!", left: "37%" },
+    { message: "Let's go!", left: "43%" },
+  ];
   // Body parts functionality
   for (let group of svgG) {
     if (group.id !== bodyP.id) {
@@ -85,9 +91,19 @@ function onClick(svgG, bodyP, exerciseListDataProxy) {
   // Add data to the exercise section
   addDataToExerciseSection(bodyP, exerciseListDataProxy);
 
+  const message = document.getElementById("buddy-message");
+  const randomNumber = Math.floor(Math.random() * messages.length);
+  message.style.opacity = 1;
+  message.textContent = messages[randomNumber].message;
+  message.style.left = messages[randomNumber].left;
+  setTimeout(() => {
+    message.style.opacity = 0;
+  }, 1000);
   // Make the window scroll down to the exercise section
   const exercisesSection = document.getElementById("exercises-wrapper");
-  exercisesSection.scrollIntoView({ behavior: "smooth", block: "start" });
+  setTimeout(() => {
+    exercisesSection.scrollIntoView({ behavior: "smooth", block: "start" });
+  }, 1200);
 }
 
 function attachEventListeners(initialCol, svgG, exerciseListDataProxy) {
