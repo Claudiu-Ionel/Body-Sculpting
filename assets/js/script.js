@@ -10,6 +10,7 @@ window.addEventListener("load", () => {
   // Get the Object by ID
   const objectSVGBack = document.getElementById("body-svg-back");
   const objectSVGFront = document.getElementById("body-svg-front");
+  // Make svg fade in
   objectSVGFront.style.opacity = "1";
   // Get the SVG document inside the Object tag
   const svgDocBack = objectSVGBack.contentDocument;
@@ -32,7 +33,7 @@ window.addEventListener("load", () => {
     },
     set: function (target, key, value) {
       console.log(
-        `set request to exerciseListData with key: ${name} value:`,
+        `set request to exerciseListData with key: ${key} value:`,
         value
       );
       let attNumber = Number(
@@ -41,8 +42,6 @@ window.addEventListener("load", () => {
       exerciseListButton.setAttribute("data-exercisesNum", ++attNumber);
 
       return Reflect.set(...arguments);
-      // proxyAddExercise(obj, name)
-      // console.log(obj)
     },
     hasProperty(target, key) {
       if (key[0] === "_") {
@@ -59,11 +58,13 @@ window.addEventListener("load", () => {
     objectSVGBack.style.visibility = "hidden";
     objectSVGFront.style.visibility = "visible";
     objectSVGFront.style.opacity = "1";
+    objectSVGBack.style.opacity = "0";
   });
   backBodyViewButton.addEventListener("click", () => {
     objectSVGBack.style.visibility = "visible";
     objectSVGFront.style.visibility = "hidden";
     objectSVGBack.style.opacity = "1";
+    objectSVGFront.style.opacity = "0";
   });
   // event listener added to exerciseListButton
   exerciseListButton.addEventListener("click", () => {
@@ -73,7 +74,7 @@ window.addEventListener("load", () => {
 
 function attachEventListeners(initialCol, svgG, exerciseListDataProxy) {
   for (let bodyPart of svgG) {
-    // add transition animation on body parts
+    // add color transition on body parts
     bodyPart.style.transition = "color 100ms ease-in";
 
     // skip adding event listeners to some body parts - fingers / neck muscles / lower leg muscles
@@ -204,22 +205,19 @@ function addExercise(event, bodyPartData, exerciseList) {
   // the button has data-exercise attribute that has the same key name as in the data.js file
   const keyName = event.target.getAttribute("data-exercise");
   // set data to exerciseList object and proxy
-  // const data = { ...bodyPartData.exercises[keyName] }
-  // console.log(data)
   exerciseList[keyName] = { ...bodyPartData.exercises[keyName] };
 
   addDifficultySection(bodyPartData.exercises[keyName], keyName);
 }
 
 function addDifficultySection(obj, keyName) {
-  console.log(keyName);
-  console.log(obj);
   const title = obj.title;
-  // add html to exercise list section
 
+  // add title and difficulty buttons
   let exerciseListHtml = `<div class="exercise">
   <p>${title}</p>
   <div class="exercise-info" id=${keyName}>
+  <div class="bubble" id=${keyName}-bubble>!</div>
   Difficulty: 
   <button class="difficulty-button easy" data-difficulty="easy" data-targetID=${keyName}>Easy</button>
   <button class="difficulty-button medium" data-difficulty="medium" data-targetID=${keyName}>Medium</button>
@@ -233,14 +231,23 @@ function addDifficultySection(obj, keyName) {
     let exerciseInfoId = button.getAttribute("data-targetID");
     let difficultyAttribute = button.getAttribute("data-difficulty");
     button.addEventListener("click", () => {
+      //set difficulty in exerciseList object and proxy
       obj.difficulty = difficultyAttribute;
+      // add data according to selected difficulty
       difficultyHandler(difficultyAttribute, obj, exerciseInfoId);
+
+      // decrease number of exercises in bubble notification on exerciseListButton
+      const exerciseListButton = document.getElementById(
+        "exercise-list-button"
+      );
+      let attNumber =
+        Number(exerciseListButton.getAttribute("data-exercisesNum")) - 1;
+      exerciseListButton.setAttribute("data-exercisesNum", attNumber);
     });
   }
 }
 
 function difficultyHandler(difficulty, obj, keyName) {
-  console.log(obj);
   let percentage;
   if (difficulty === "easy") percentage = 50 / 100;
   if (difficulty === "medium") percentage = 100 / 100;

@@ -266,8 +266,24 @@ iframe {
   color: var(--main-variant);
 }
 .exercise-info {
+  position: relative;
   display: flex;
   flex-direction: column;
+}
+.exercise-info .bubble {
+  position: absolute;
+  top: -25px;
+  right: 0;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3px;
+  background-color: red;
+  color: #fff;
+  font-weight: 700;
+  border-radius: 50%;
 }
 .exercise-info:has(button) {
   flex-direction: row;
