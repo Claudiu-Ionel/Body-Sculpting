@@ -1,6 +1,10 @@
 import { exercises } from "../data/data.js";
 
 window.addEventListener("load", () => {
+  const exerciseListElement = document.getElementById("exercise-list");
+  // Exercise list button
+  const exerciseListButton = document.getElementById("exercise-list-button");
+  // Body view buttons
   const frontBodyViewButton = document.getElementById("front-body-button");
   const backBodyViewButton = document.getElementById("back-body-button");
   // Get the Object by ID
@@ -55,6 +59,10 @@ window.addEventListener("load", () => {
     objectSVGBack.style.visibility = "visible";
     objectSVGFront.style.visibility = "hidden";
     objectSVGBack.style.opacity = "1";
+  });
+  // event listener added to exerciseListButton
+  exerciseListButton.addEventListener("click", () => {
+    exerciseListElement.classList.toggle("open");
   });
 });
 
