@@ -35,6 +35,11 @@ window.addEventListener("load", () => {
         `set request to exerciseListData with key: ${name} value:`,
         value
       );
+      let attNumber = Number(
+        exerciseListButton.getAttribute("data-exercisesNum")
+      );
+      exerciseListButton.setAttribute("data-exercisesNum", ++attNumber);
+
       return Reflect.set(...arguments);
       // proxyAddExercise(obj, name)
       // console.log(obj)

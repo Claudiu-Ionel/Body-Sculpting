@@ -55,6 +55,24 @@ main {
   border: none;
   border-radius: 10px;
 }
+#exercise-list-button[data-exercisesNum="0"]::after {
+  opacity: 0;
+}
+#exercise-list-button::after {
+  opacity: 1;
+  content: attr(data-exercisesNum);
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  padding: 3px;
+  background-color: red;
+  color: #fff;
+  text-align: center;
+  transition: opacity 200ms ease-in;
+}
 #exercise-list-button i {
   font-size: 1.5rem;
 }
@@ -207,7 +225,6 @@ iframe {
 }
 
 #exercise-list {
-  display: none;
   background-color: #fff;
   display: flex;
   flex-direction: column;
@@ -217,7 +234,8 @@ iframe {
   position: fixed;
   right: 0;
   top: 0;
-  transition: width 200ms ease-in;
+  transition: all 200ms ease-in;
+  overflow: auto;
   border-left: 5px solid var(--secondary);
   background-color: var(--main-variant);
   color: var(--secondary);
@@ -228,7 +246,7 @@ iframe {
 
 #exercise-list.open {
   /* display: none; */
-  width: 300px;
+  width: 320px;
   padding: 10px;
 }
 
