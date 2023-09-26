@@ -1,3 +1,15 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap");
+
+:root {
+  --main: #003566;
+  --main-variant: #001d3d;
+  --secondary: #ffc300;
+  --secondary-variant: #d56370;
+  --greyish-blue: #4f5d74;
+  --dark-greyish-blue: #313a48;
+  --light-Cyan: #cee3e9;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -5,8 +17,9 @@
 }
 
 body {
+  font-family: "Manrope", sans-serif;
   min-height: 100vh;
-  background-color: #003566;
+  background-color: #001d3d;
 }
 
 main {
@@ -15,13 +28,16 @@ main {
   width: 100%;
   height: 100%;
   min-height: 100vh;
-  flex-direction: column;
   align-items: center;
+  justify-content: center;
   padding: 10px;
 }
 object {
   opacity: 0;
   transition: opacity 200ms ease-in;
+}
+object svg > * {
+  color: #4f5d74 !important;
 }
 #body-svg-wrapper {
   display: flex;
@@ -33,12 +49,16 @@ object {
   height: 500px;
   position: relative;
 }
+#body-svg-wrapper h2 {
+  margin-bottom: 10px;
+  color: var(--secondary);
+}
 .message {
   opacity: 0;
   padding: 5px 10px;
   background-color: #fff;
   position: absolute;
-  top: 60px;
+  top: 75px;
   left: 20%;
   border: none;
   border-radius: 10px;
@@ -57,13 +77,41 @@ object {
   border-left: 10px solid #fff;
 }
 .body-view-buttons {
+  display: flex;
   margin-top: 20px;
   position: absolute;
   bottom: 10px;
+  gap: 15px;
 }
-.body-button {
+.body-button,
+.add-exercise-button {
+  font-size: 1.1rem;
   padding: 5px 10px;
   cursor: pointer;
+  background-color: var(--main-variant);
+  border: none;
+  /* border-radius: 5px; */
+  color: var(--secondary);
+  transition: all 200ms ease-in;
+  border: 2px solid var(--secondary);
+}
+.add-exercise-button {
+  margin-top: 5px;
+  background-color: var(--main);
+}
+.add-exercise-button:disabled {
+  opacity: 0.5;
+}
+.add-exercise-button:disabled:hover {
+  background-color: var(--main);
+  color: var(--secondary);
+  cursor: not-allowed;
+}
+
+.body-button:hover,
+.add-exercise-button:hover {
+  background-color: var(--secondary);
+  color: var(--main-variant);
 }
 #body-svg-front {
   visibility: visible;
@@ -74,28 +122,58 @@ object {
   height: 400px;
   margin-top: 20px;
   position: absolute;
+  top: 20px;
 }
 
 #exercises-wrapper {
+  position: relative;
   display: none;
   align-items: center;
   flex-direction: column;
   width: 100%;
   max-width: 650px;
-  min-height: 400px;
-  background-color: #fff;
-  text-align: center;
+  height: 500px;
+  background-color: var(--main);
   padding: 20px;
   border-radius: 10px;
+  overflow: hidden;
+  overflow-y: scroll;
+  -webkit-scrollbar-color: red orange;
+  -webkit-scrollbar-width: thin;
+}
+#exercises-wrapper > * {
+  color: var(--secondary);
 }
 #exercises-wrapper > * {
   margin-bottom: 10px;
 }
-
+.muscle-group-title {
+  color: var(--secondary);
+}
+/* .muscle-group-description {
+  color: var(--light-Cyan);
+} */
+.muscle-group-funfact {
+  border: 2px dashed var(--secondary);
+  padding: 20px;
+}
+.iframe-wrapper {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+.iframe-wrapper > h4 {
+  color: var(--secondary);
+  margin-bottom: 20px;
+}
 iframe {
   width: 100%;
 
-  max-height: 300px;
+  height: 360px;
+  flex-grow: 1;
 }
 
 .add-exercise-button {
@@ -103,6 +181,7 @@ iframe {
 }
 
 #exercise-list {
+  display: none;
   background-color: #fff;
   display: flex;
   flex-direction: column;
@@ -119,6 +198,43 @@ iframe {
 }
 
 #exercise-list.open {
+  /* display: none; */
   width: 300px;
   padding: 10px;
+  border-left: 5px solid var(--secondary);
+  background-color: var(--main-variant);
+  color: var(--secondary);
+}
+
+.difficulty-button {
+  font-size: 0.8rem;
+  padding: 5px 10px;
+  cursor: pointer;
+  background-color: var(--main);
+  border: none;
+  /* border-radius: 5px; */
+  color: var(--secondary);
+  transition: all 200ms ease-in;
+  border: 2px solid var(--secondary);
+}
+.difficulty-button:hover {
+  background-color: var(--secondary);
+  color: var(--main-variant);
+}
+.exercise-info {
+  display: flex;
+  flex-direction: column;
+}
+.exercise-info:has(button) {
+  flex-direction: row;
+  gap: 4px;
+}
+.exercise {
+  background: var(--main);
+  padding: 5px 10px;
+  border-radius: 10px;
+}
+.exercise p {
+  margin-bottom: 10px;
+  font-weight: 700;
 }

@@ -58,6 +58,34 @@ window.addEventListener("load", () => {
   });
 });
 
+function attachEventListeners(initialCol, svgG, exerciseListDataProxy) {
+  for (let bodyPart of svgG) {
+    // add transition animation on body parts
+    bodyPart.style.transition = "color 100ms ease-in";
+
+    // skip adding event listeners to some body parts - fingers / neck muscles / lower leg muscles
+    if (bodyPart.id === "hands-fingers-back") continue;
+    if (bodyPart.id === "hands-fingers-front") continue;
+    if (bodyPart.id === "head-front") continue;
+    if (bodyPart.id === "head-back") continue;
+    if (bodyPart.id === "legs-lower-back") continue;
+    if (bodyPart.id === "legs-lower-front") continue;
+
+    bodyPart.addEventListener("mouseover", () => {
+      initialCol = bodyPart.style.color;
+      mouseOver(bodyPart);
+    });
+    bodyPart.addEventListener("mouseout", () => {
+      mouseOut(initialCol, bodyPart);
+    });
+    bodyPart.addEventListener("click", () => {
+      // #d56370
+      bodyPart.style.color = "#d56370";
+      onClick(svgG, bodyPart, exerciseListDataProxy);
+    });
+  }
+}
+
 function mouseOver(bodyP) {
   if (bodyP.style.color === "rgb(255, 195, 0)") return;
   bodyP.style.color = "rgb(255, 214, 10)";
@@ -115,33 +143,6 @@ function renderMessageBuddy() {
   }, 1000);
 }
 
-function attachEventListeners(initialCol, svgG, exerciseListDataProxy) {
-  for (let bodyPart of svgG) {
-    // add transition animation on body parts
-    bodyPart.style.transition = "color 100ms ease-in";
-
-    // skip adding event listeners to some body parts - fingers / neck muscles / lower leg muscles
-    if (bodyPart.id === "hands-fingers-back") continue;
-    if (bodyPart.id === "hands-fingers-front") continue;
-    if (bodyPart.id === "head-front") continue;
-    if (bodyPart.id === "head-back") continue;
-    if (bodyPart.id === "legs-lower-back") continue;
-    if (bodyPart.id === "legs-lower-front") continue;
-
-    bodyPart.addEventListener("mouseover", () => {
-      initialCol = bodyPart.style.color;
-      mouseOver(bodyPart);
-    });
-    bodyPart.addEventListener("mouseout", () => {
-      mouseOut(initialCol, bodyPart);
-    });
-    bodyPart.addEventListener("click", () => {
-      bodyPart.style.color = "rgb(255, 195, 0)";
-      onClick(svgG, bodyPart, exerciseListDataProxy);
-    });
-  }
-}
-
 function addDataToExerciseSection(bodyP, exerciseListDataProxy) {
   let bodyPartData = exercises[bodyP.id];
   // Make exercise section visible
@@ -151,18 +152,19 @@ function addDataToExerciseSection(bodyP, exerciseListDataProxy) {
   // Add data to the section
 
   let html = `
-  <h2>${bodyPartData.title}</h2>
-  <h3>${bodyPartData.description}</h3>
-  <p>${bodyPartData["fun-fact"]}<p>
-  <h4>Exercises: </h4>
-
+  <h2 class="muscle-group-title">${bodyPartData.title}</h2>
+  <h3 class="muscle-group-description">${bodyPartData.description}</h3>
+  <p class="muscle-group-funfact">${bodyPartData["fun-fact"]}<p>
+  <h4>Exercises:</h4>  
   `;
 
   // Add videos tutorials
   for (const [key, value] of Object.entries(bodyPartData["exercises"])) {
-    html += `<h5>${value.title}</h5>
-    <iframe width="560" height="315" src=${value.videoUrl} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    html += `<div class="iframe-wrapper">
+    <h4>${value.title}</h4>
+    <iframe width="560" height="315" src=${value.videoUrl} title="YouTube video player" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
     <button class="add-exercise-button" data-exercise=${key}>Add Exercise</button>
+    </div>
     `;
   }
   exercisesSection.innerHTML = html;
@@ -202,7 +204,7 @@ function addDifficultySection(obj, keyName) {
   const title = obj.title;
   // add html to exercise list section
 
-  let exerciseListHtml = `<div>
+  let exerciseListHtml = `<div class="exercise">
   <p>${title}</p>
   <div class="exercise-info" id=${keyName}>
   Difficulty: 
@@ -232,7 +234,7 @@ function difficultyHandler(difficulty, obj, keyName) {
   if (difficulty === "hard") percentage = 150 / 100;
   console.log(percentage);
   let html = `
-  <span>Time:${obj.time}s per rep</span>
+  <span>Time:${obj.time}s per set</span>
   <span>Reps:${obj.reps * percentage} reps</span>
   <span>Sets:${obj.sets * percentage} </span>
   <span>Break:${obj.breaks * obj.sets}s</span>
