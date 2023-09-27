@@ -1,6 +1,21 @@
 import { exercises } from "../data/data.js";
-
+import {
+  addToLocalStorage,
+  addFromLocalStorageToExerciseList,
+} from "./localStorage.js";
 window.addEventListener("load", () => {
+  // Check if there is data in localStorage
+  const localStorageData = JSON.parse(
+    window.localStorage.getItem("exerciseList")
+  );
+  // Target exercise list element
+
+  if (localStorageData) {
+    for (const [key, value] of Object.entries(localStorageData)) {
+      addFromLocalStorageToExerciseList(value, key);
+    }
+  }
+
   // Exercise list button
   const exerciseListButton = document.getElementById("exercise-list-button");
   // Exercise list close button
@@ -28,7 +43,7 @@ window.addEventListener("load", () => {
   let initialColor;
 
   // data variable for exercise list
-  let exerciseListData = {};
+  let exerciseListData = localStorageData || {};
   let exerciseListDataProxy = new Proxy(exerciseListData, {
     get: function (obj, name) {
       console.log("read request to " + name + " property");
@@ -39,11 +54,13 @@ window.addEventListener("load", () => {
         `set request to exerciseListData with key: ${key} value:`,
         value
       );
+      // increase exercise number attribute - this makes the bubble show
       let attNumber = Number(
         exerciseListButton.getAttribute("data-exercisesNum")
       );
       exerciseListButton.setAttribute("data-exercisesNum", ++attNumber);
 
+      // check if there are exercises in the list
       return Reflect.set(...arguments);
     },
     hasProperty(target, key) {
@@ -62,12 +79,16 @@ window.addEventListener("load", () => {
     objectSVGFront.style.visibility = "visible";
     objectSVGFront.style.opacity = "1";
     objectSVGBack.style.opacity = "0";
+    const localStorageData = window.localStorage.getItem("exerciseList");
+    console.log(localStorageData);
   });
   backBodyViewButton.addEventListener("click", () => {
     objectSVGBack.style.visibility = "visible";
     objectSVGFront.style.visibility = "hidden";
     objectSVGBack.style.opacity = "1";
     objectSVGFront.style.opacity = "0";
+    const localStorageData = window.localStorage.getItem("exerciseList");
+    console.log(localStorageData);
   });
   // event listener added to exerciseListButton
   exerciseListButton.addEventListener("click", () => {
@@ -76,15 +97,9 @@ window.addEventListener("load", () => {
   });
   // event listener added to closeExerciseListButton
   exerciseListCloseButton.addEventListener("click", () => {
-    // open - close exercise list
     toggleExerciseListOpen();
   });
 });
-
-function toggleExerciseListOpen() {
-  const exerciseListElement = document.getElementById("exercise-list");
-  exerciseListElement.classList.toggle("open");
-}
 
 function attachEventListeners(initialCol, svgG, exerciseListDataProxy) {
   for (let bodyPart of svgG) {
@@ -155,6 +170,7 @@ function renderMessageBuddy() {
   const messages = [
     { message: "Hell Yeah!", left: "5%" },
     { message: "Let's go!", left: "8%" },
+    { message: "Pump it!", left: "8%" },
   ];
   // target message div
   const message = document.getElementById("buddy-message");
@@ -219,7 +235,7 @@ function addExercise(event, bodyPartData, exerciseList) {
   const keyName = event.target.getAttribute("data-exercise");
   // set data to exerciseList object and proxy
   exerciseList[keyName] = { ...bodyPartData.exercises[keyName] };
-
+  // render difficulty section
   addDifficultySection(bodyPartData.exercises[keyName], keyName);
 }
 
@@ -237,9 +253,21 @@ function addDifficultySection(obj, keyName) {
   <button class="difficulty-button hard" data-difficulty="hard" data-targetID=${keyName}>Hard</button>
   </div>
   </div>`;
+  // add html to exercise list
   document.getElementById("exercise-list").innerHTML += exerciseListHtml;
+
+  // targeting close button for exercise list again
+  const exerciseListCloseButton = document.getElementById(
+    "close-exercise-list-button"
+  );
+  // adding the click event listener again because we are removing it above by changing the html
+  exerciseListCloseButton.addEventListener("click", toggleExerciseListOpen);
+
+  // targeting difficultyButtons
   const difficultyButtons =
     document.getElementsByClassName("difficulty-button");
+
+  // attaching click event listeners
   for (let button of difficultyButtons) {
     let exerciseInfoId = button.getAttribute("data-targetID");
     let difficultyAttribute = button.getAttribute("data-difficulty");
@@ -247,8 +275,12 @@ function addDifficultySection(obj, keyName) {
       //set difficulty in exerciseList object and proxy
       obj.difficulty = difficultyAttribute;
       // add data according to selected difficulty
-      difficultyHandler(difficultyAttribute, obj, exerciseInfoId);
-
+      const dataAfterDifficulty = difficultyHandler(
+        difficultyAttribute,
+        obj,
+        exerciseInfoId
+      );
+      addToLocalStorage(exerciseInfoId, dataAfterDifficulty);
       // decrease number of exercises in bubble notification on exerciseListButton
       const exerciseListButton = document.getElementById(
         "exercise-list-button"
@@ -265,12 +297,33 @@ function difficultyHandler(difficulty, obj, keyName) {
   if (difficulty === "easy") percentage = 50 / 100;
   if (difficulty === "medium") percentage = 100 / 100;
   if (difficulty === "hard") percentage = 150 / 100;
-  console.log(percentage);
+
+  const time = obj.time;
+  const reps = obj.reps * percentage;
+  const sets = obj.sets * percentage;
+  const breaks = obj.breaks * obj.sets;
+  // Create new html for exercise-info
   let html = `
   <span>Time:${obj.time}s per set</span>
   <span>Reps:${obj.reps * percentage} reps</span>
   <span>Sets:${obj.sets * percentage} </span>
   <span>Break:${obj.breaks * obj.sets}s</span>
   `;
+  // add new html
   document.getElementById(keyName).innerHTML = html;
+
+  // return object to use in addToLocalStorage function
+  return {
+    title: keyName,
+    time: time,
+    reps: reps,
+    sets: sets,
+    breaks: breaks,
+    difficulty: difficulty,
+  };
+}
+
+function toggleExerciseListOpen() {
+  const exerciseListElement = document.getElementById("exercise-list");
+  exerciseListElement.classList.toggle("open");
 }
