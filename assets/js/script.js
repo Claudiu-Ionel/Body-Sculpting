@@ -1,9 +1,12 @@
 import { exercises } from "../data/data.js";
 
 window.addEventListener("load", () => {
-  const exerciseListElement = document.getElementById("exercise-list");
   // Exercise list button
   const exerciseListButton = document.getElementById("exercise-list-button");
+  // Exercise list close button
+  const exerciseListCloseButton = document.getElementById(
+    "close-exercise-list-button"
+  );
   // Body view buttons
   const frontBodyViewButton = document.getElementById("front-body-button");
   const backBodyViewButton = document.getElementById("back-body-button");
@@ -68,9 +71,20 @@ window.addEventListener("load", () => {
   });
   // event listener added to exerciseListButton
   exerciseListButton.addEventListener("click", () => {
-    exerciseListElement.classList.toggle("open");
+    // open - close exercise list
+    toggleExerciseListOpen();
+  });
+  // event listener added to closeExerciseListButton
+  exerciseListCloseButton.addEventListener("click", () => {
+    // open - close exercise list
+    toggleExerciseListOpen();
   });
 });
+
+function toggleExerciseListOpen() {
+  const exerciseListElement = document.getElementById("exercise-list");
+  exerciseListElement.classList.toggle("open");
+}
 
 function attachEventListeners(initialCol, svgG, exerciseListDataProxy) {
   for (let bodyPart of svgG) {
@@ -140,7 +154,6 @@ function renderMessageBuddy() {
   // possible messages for message div
   const messages = [
     { message: "Hell Yeah!", left: "5%" },
-    { message: "Pump those muscles!", left: "-25%" },
     { message: "Let's go!", left: "8%" },
   ];
   // target message div

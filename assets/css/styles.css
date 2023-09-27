@@ -248,13 +248,31 @@ iframe {
 #exercise-list h2 {
   text-align: center;
 }
-
+#close-exercise-list-button {
+  position: absolute;
+  padding: 5px;
+  right: 10px;
+  top: 10px;
+  background-color: transparent;
+  border: 1px solid var(--secondary);
+  color: var(--secondary);
+}
+#close-exercise-list-button:hover {
+  background-color: var(--secondary);
+  color: #003566;
+  cursor: pointer;
+}
+#exercise-list > * {
+  opacity: 0;
+}
 #exercise-list.open {
   /* display: none; */
   width: 320px;
   padding: 10px;
 }
-
+#exercise-list.open > * {
+  opacity: 1;
+}
 .difficulty-button {
   font-size: 0.8rem;
   padding: 5px 10px;
@@ -302,4 +320,48 @@ iframe {
 .exercise p {
   margin-bottom: 10px;
   font-weight: 700;
+}
+
+/* Media query: large or landscape phones(414px and up) */
+
+@media screen and (max-width: 414px) {
+  .logo {
+    width: 60px;
+    height: 60px;
+  }
+  #exercise-list.open {
+    width: 100%;
+  }
+  #body-svg-wrapper {
+    margin-top: 60px;
+  }
+  #body-svg-wrapper h2 {
+    display: none;
+  }
+  .message {
+    max-width: 100px;
+  }
+  .exercise-info {
+    flex-wrap: wrap;
+  }
+}
+/* Media query: large or landscape phones(820px and up) */
+
+@media screen and (max-width: 820px) {
+  main {
+    flex-direction: column;
+  }
+  .logo {
+    z-index: 1;
+  }
+  #exercise-list {
+    z-index: 2;
+  }
+  #exercises-wrapper {
+    overflow: hidden;
+    height: fit-content;
+  }
+  #body-svg-wrapper {
+    margin-top: 60px;
+  }
 }
