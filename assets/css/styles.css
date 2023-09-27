@@ -4,6 +4,7 @@
   --main: #003566;
   --main-variant: #001d3d;
   --secondary: #ffc300;
+  --secondary-light: #ffdc69;
   --secondary-variant: #d56370;
   --greyish-blue: #4f5d74;
   --dark-greyish-blue: #313a48;
@@ -54,6 +55,10 @@ main {
   background-color: var(--secondary);
   border: none;
   border-radius: 10px;
+}
+#exercise-list-button:hover {
+  background-color: var(--secondary-light);
+  cursor: pointer;
 }
 #exercise-list-button[data-exercisesNum="0"]::after {
   opacity: 0;
