@@ -1,11 +1,12 @@
 export function addToLocalStorage(key, value) {
   const localStorageData = window.localStorage.getItem("exerciseList");
+  // if there is data in local storage add on top of it
   if (localStorageData) {
     const newObj = { ...JSON.parse(localStorageData) };
     newObj[key] = value;
     window.localStorage.setItem("exerciseList", JSON.stringify(newObj));
   }
-
+  // if there is no data in local storage set it
   if (!localStorageData) {
     const newObj = {};
     newObj[key] = value;
@@ -13,17 +14,6 @@ export function addToLocalStorage(key, value) {
     window.localStorage.setItem("exerciseList", JSON.stringify(newObj));
   }
 }
-
-// window.localStorage.clear();
-// addToLocalStorage("Bench-Press", {
-//   title: "Bench Press",
-//   videoUrl: "https://www.youtube.com/embed/vthMCtgVtFw?si=rk92tcwultkjbSQI",
-//   time: 60,
-//   reps: 12,
-//   sets: 2,
-//   breaks: 60,
-//   difficulty: null,
-// });
 
 export function addFromLocalStorageToExerciseList(obj, keyName) {
   const title = obj.title.replace("-", " ");
