@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- stylesheet -->
     <link rel="stylesheet" href="./assets/css/styles.css" />
+    <meta name="description" content="Workout website" />
+    <meta name="author" content="Claudiu Ionel" />
     <title>Body Sculpting</title>
   </head>
   <body>
@@ -15,7 +17,11 @@
       <div class="logo">
         <img src="./assets/images/logo.png" alt="" />
         <div id="exercise-list-button-wrapper">
-          <button id="exercise-list-button" data-exercisesNum="0">
+          <button
+            id="exercise-list-button"
+            data-exercisesNum="0"
+            aria-label="Toggle exercise list"
+          >
             <i class="fa-solid fa-dumbbell"></i>
           </button>
         </div>
@@ -27,11 +33,13 @@
           type="image/svg+xml"
           data="./assets/images/body-svg-back.svg"
           id="body-svg-back"
+          aria-label="SVG of the human body (backside view)"
         ></object>
         <object
           type="image/svg+xml"
           data="./assets/images/body-svg-front.svg"
           id="body-svg-front"
+          aria-label="SVG of the human body (fronside view)"
         ></object>
         <div class="body-view-buttons">
           <button class="body-button" id="front-body-button">Front</button>
@@ -40,7 +48,10 @@
       </section>
       <section id="exercises-wrapper"></section>
       <section id="exercise-list">
-        <button id="close-exercise-list-button">
+        <button
+          id="close-exercise-list-button"
+          aria-label="Toggle exercise list"
+        >
           <i class="fa-solid fa-xmark"></i>
         </button>
         <h2>Exercises</h2>

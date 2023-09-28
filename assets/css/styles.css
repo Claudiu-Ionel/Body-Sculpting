@@ -186,8 +186,6 @@ object svg > * {
   border-radius: 10px;
   overflow: hidden;
   overflow-y: scroll;
-  -webkit-scrollbar-color: red orange;
-  -webkit-scrollbar-width: thin;
 }
 #exercises-wrapper > * {
   color: var(--secondary);

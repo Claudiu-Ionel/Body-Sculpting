@@ -173,7 +173,9 @@ The biggest issues where related to performance and it was because I wasn't usin
 ### Validator Testing
 
 - W3C CSS Validator to validate CSS
+  - Results for this website you can find using this [link](https://validator.w3.org/nu/?doc=https%3A%2F%2Fclaudiu-ionel.github.io%2FBody-Sculpting%2F)
 - W3C validator to validate HTML
+  - Results for this website you can find using this [link](https://validator.w3.org/nu/?doc=https%3A%2F%2Fclaudiu-ionel.github.io%2FBody-Sculpting%2F)
 
 ## User Stories Testing
 
