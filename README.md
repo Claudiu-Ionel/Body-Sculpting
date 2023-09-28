@@ -173,7 +173,7 @@ I used [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) tool
 - W3C CSS Validator to validate CSS
   - Results for this website you can find using this [link](https://validator.w3.org/nu/?doc=https%3A%2F%2Fclaudiu-ionel.github.io%2FBody-Sculpting%2F)
 - W3C validator to validate HTML
-  - Results for this website you can find using this [link](https://validator.w3.org/nu/?doc=https%3A%2F%2Fclaudiu-ionel.github.io%2FBody-Sculpting%2F)
+  - Results for this website you can find using this [link](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fclaudiu-ionel.github.io%2FBody-Sculpting%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
 
 ## User Stories Testing
 
