@@ -1,39 +1,121 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Body Sculpting
 
-Welcome,
+## Javascript Essentials Milestone Project.
 
-This is the Code Institute student template for Codeanywhere. If you are using Gitpod then you need [this template](https://github.com/Code-Institute-Org/gitpod-full-template) instead.  We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+Welcome to **Body Sculpting**! A workout planner app meant to give it's users information about muscle groups, exercises they can practise to improve their health and plan/create a training routine.
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Codeanywhere and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **August 30th, 2023**
+![Screenshot of the website provided by amiresponsive showcasing the responsiveness of the site.](./assets/images/readme-images/AmIResponsive.png)
 
-## Codeanywhere Reminders
+### Existing Features
 
-To run a frontend (HTML, CSS, Javascript only) application in Codeanywhere, in the terminal, type:
+- **The human body**
 
-`python3 -m http.server`
+  - This is the main attraction of the app where users see the muscle groups and make a decision on what they want to workout.
+    ![Screenshot of the human body asset being hovered.](./assets/images/readme-images/human-body-hover.gif)
+  - This section will allow users to select the muscle group and receive usefull information paired with exercise video tutorials.
 
-A button should appear to click: _Open Preview_ or _Open Browser_.
+- **Exercise section**
 
-To run a frontend (HTML, CSS, Javascript only) application in Codeanywhere with no-cache, you can use this alias for `python3 -m http.server`.
+  - When users click on a mouscle group an exercise section appears.
+  - It is meant to give users information and video tutorials of exercises they can do.
+    ![Screenshot of the exercise list.](./assets/images/readme-images/exercise-section.gif)
 
-`http_server`
+- **Adding exercise**
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+  - Each exercise listed in the exercise section has a button linked to it.
+  - Users can press the button and add it to their exercise list.
 
-A button should appear to click: _Open Preview_ or _Open Browser_.
+- **Exercise notification**
 
-In Codeanywhere you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+  - After adding exercises users will be notified by a notification bubble.
+    ![Screenshot of the exercise list notification.](./assets/images/readme-images/exercise-list-notification.gif)
 
-To log into the Heroku toolbelt CLI:
+- **Exercise List**
 
-1. Log in to your Heroku account and go to _Account Settings_ in the menu under your avatar.
-2. Scroll down to the _API Key_ and click _Reveal_
-3. Copy the key
-4. In Codeanywhere, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+  - This section containes the selected exercises.
+  - Here users can select the difficulty of the selected exercises.
+  - After selecting the difficulty, new information related to the exercises will be shown.
+    ![Screenshot of difficulty in exercises](./assets/images/readme-images/exercise-difficulty-selection.gif)
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+- **Persistent data across user sessions**
+  - Selected exercises, workout routines, and personalized settings are saved locally, ensuring that nothing is lost in the fitness progress.
+  - The data remains on the device, enhancing privacy and security. No sensitive information is stored in external servers.
 
----
+## Technologies used
 
-Happy coding!
+### HTML5
+
+- As a structure language.
+
+### CSS3
+
+- As style language.
+
+### Javascript
+
+- As a programming language.
+
+### Font Awesome
+
+- As an icon library for social links.
+
+### GitHub
+
+- As a software hosting platform to keep the project in a remote location.
+
+### Git
+
+- As a version-control system.
+
+### Inkscape
+
+- Software used to modify images and create SVGs.
+
+## Testing
+
+I used Mozilla web developer tools and Chrome developer tools throughout the project for testing and solving problems with responsiveness and style issues.
+
+Website was tested across multiple virtual devices and browsers with the help of the developer tools. I checked all supported devices and all the features are behaving and showing according to the screen size.
+
+I also tested the website on my personal hardware: Xiaomi 12 pro that runs on Android 13.
+
+### Performance Testing
+
+I used [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) tool to check performance of the website and these are the results.
+
+![Screenshot of the feedback form on contact page.](./readme_images/performance_screenshot.png)
+
+The biggest issues where related to performance and it was because I wasn't using an optimal format for images. As a solution I converted all of the images into **WebP**.
+
+### Validator Testing
+
+- W3C CSS Validator to validate CSS
+- W3C validator to validate HTML
+
+## Deployment
+
+The project was deployed on GitHub Pages.
+
+To deploy a the project I had to:
+
+- In the GitHub repository, navigate to the **Settings tab**.
+- From the source section drop-down menu, select the **Deploy from branch**.
+- From the branch section drop-down menu, select the **main** as the branch and **/(root)** as the folder and click **save**.
+- After a couple of minutes the website will be deployed and you will find at the top of the page the link to your website. **(in case you don't see anything, refresh the page)**
+
+The live link can be found here - https://claudiu-ionel.github.io/Body-Sculpting/
+
+## Credits
+
+### Content
+
+- The icons on the website were taken from [Font Awesome](https://fontawesome.com/)
+
+- Videos on the website were embeded from these respective youtube channels:
+  - **ATHLEAN-X** - [video link](https://www.youtube.com/@athleanx)
+  - **Mind Pump TV** - [video link](https://www.youtube.com/@MindPumpTV)
+
+### Media
+
+- The images used on the website were generated by [Midjourney](https://www.midjourney.com/app/)
+- Body SVG used on the website was downloaded from [Pixabay](https://pixabay.com/vectors/anatomical-anatomy-anatomy-chart-6826992/)
