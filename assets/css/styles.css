@@ -307,7 +307,7 @@ iframe {
   font-weight: 700;
   border-radius: 50%;
 }
-.exercise-info:has(button) {
+.exercise-info.flex-row {
   flex-direction: row;
   gap: 4px;
 }

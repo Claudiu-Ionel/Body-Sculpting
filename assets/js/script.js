@@ -245,7 +245,7 @@ function addDifficultySection(obj, keyName) {
   // add title and difficulty buttons
   let exerciseListHtml = `<div class="exercise">
   <p>${title}</p>
-  <div class="exercise-info" id=${keyName}>
+  <div class="exercise-info flex-row" id=${keyName}>
   <div class="bubble" id=${keyName}-bubble>!</div>
   Difficulty: 
   <button class="difficulty-button easy" data-difficulty="easy" data-targetID=${keyName}>Easy</button>
@@ -309,6 +309,8 @@ function difficultyHandler(difficulty, obj, keyName) {
   <span>Sets:${obj.sets * percentage} </span>
   <span>Break:${obj.breaks * obj.sets}s</span>
   `;
+  // change flex direction from row to column
+  document.getElementById(keyName).classList.toggle("flex-row");
   // add new html
   document.getElementById(keyName).innerHTML = html;
 

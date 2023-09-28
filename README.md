@@ -166,9 +166,7 @@ I also tested the website on my personal hardware:
 
 I used [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) tool to check performance of the website and these are the results.
 
-![Screenshot of the feedback form on contact page.](./readme_images/performance_screenshot.png)
-
-The biggest issues where related to performance and it was because I wasn't using an optimal format for images. As a solution I converted all of the images into **WebP**.
+![Screenshot of the feedback form on contact page.](./assets/images/readme-images/lighthouse-results.png)
 
 ### Validator Testing
 
