@@ -32,7 +32,7 @@ Welcome to **Body Sculpting**! A workout planner app meant to give it's users in
 
 - **Exercise List**
 
-  - This section containes the selected exercises.
+  - This section contains the selected exercises.
   - Here users can select the difficulty of the selected exercises.
   - After selecting the difficulty, new information related to the exercises will be shown.
     ![Screenshot of difficulty in exercises](./assets/images/readme-images/exercise-difficulty-selection.gif)
@@ -47,6 +47,7 @@ Welcome to **Body Sculpting**! A workout planner app meant to give it's users in
 - Transition from localStorage to a database.
 - Create more than one list and the ability to save and edit them.
 - Add pre-made workout routines that users can add to their list.
+- Add a calendar where the user can see their progress and the type of exercises done.
 
 ### Start Workout feature
 
@@ -56,7 +57,7 @@ Welcome to **Body Sculpting**! A workout planner app meant to give it's users in
 
 ### Website owner business goals
 
-The main reason to create this website/app is to give users their own personal training space where they can look up information about training routines and use it according to their personal needs. The website owner will present at the end an offer with available prices in order to sustain and maintain the app. (this is not necessary to use the website/app and it is not forced upon the users.)
+The main reason to create this website/app is to give users their own personal training space where they can look up information about training routines and use it according to their personal needs. The website owner will present at the end an offer with available prices in order to sustain and maintain the app. (this is not necessary to use the website/app and it is not forced upon the users. Also this has not been implemented yet.)
 
 ## User Goals
 
@@ -77,7 +78,8 @@ The main reason to create this website/app is to give users their own personal t
 
 - I want users to use the app freely and meet their own needs.
 - I want my app users to be able to improve their physical and mental condition.
-- I want to improve the data related to fitness and establish connections with instructors. The main point of this is to improve the exercise videos and add high quality and in depth manuals/guide for a healthier life style.
+- I want users to interact and make the app as their personal "Pocket trainer".
+  (I want to improve the data related to fitness and establish connections with instructors. The main point of this is to improve the exercise videos and add high quality and in depth manuals/guide for a healthier life style.)
 
 ### As a new user
 
@@ -146,11 +148,19 @@ Main colors used in the project:
 
 ## Testing
 
+### Functionality Testing
+
 I used Mozilla web developer tools and Chrome developer tools throughout the project for testing and solving problems with responsiveness and style issues.
+
+### Compatibility Testing
 
 Website was tested across multiple virtual devices and browsers with the help of the developer tools. I checked all supported devices and all the features are behaving and showing according to the screen size.
 
-I also tested the website on my personal hardware: Xiaomi 12 pro that runs on Android 13.
+I also tested the website on my personal hardware:
+
+- Xiaomi 12 pro that runs on Android 13.
+- Samsung Galaxy A01 that runs on Android 11
+- HP Omen 30L that runs on Windows/OS 11
 
 ### Performance Testing
 
@@ -165,6 +175,37 @@ The biggest issues where related to performance and it was because I wasn't usin
 - W3C CSS Validator to validate CSS
 - W3C validator to validate HTML
 
+## User Stories Testing
+
+### As a website owner
+
+- I want users to use the app freely and meet their own needs.
+  > The app has no Subscription based fees and the data in it can be adapted acording to their needs. (Targeting group muscles and exercises with difficulty)
+- I want my app users to be able to improve their physical and mental condition.
+  > If users use the app often and follow the guides in the app, their health will improve.
+- I want users to interact and make the app as their personal "Pocket trainer".
+  > Users have the chance improve their life style and use this free information without resorting to hire a personal trainer
+
+### As a new user
+
+- I want to find information about muscle groups.
+  > All data in the app is grouped for the specific targetet muscle group.
+- I want to see video tutorials about exercises.
+  > Every exercise has a video guide on how to perform the exercise.
+- I want to have my own exercise list that I can manage.
+  > Users have the option to save their exercises in the exercise list.
+- I want to try out different types of exercises with different levels of difficulty.
+  > There are multiple types of exercises and all of them have 3 types of difficulty.
+
+### As a returning user
+
+- I want to see my previous exercise list and be motivated by my accomplishments.
+  > The list is saved and users can celebrate their accomplishments.
+- I want to try out different exercises.
+  > Users can focus on different muscle groups and exercises, changing and training them day by day.
+- I want to see improvements in my physical capabilities and try out the harder workout routines.
+  > Initially it is recomended to try out the easier exercises and progress towards other difficulty. Once the users get used to it and their body adapts to the difficulty, they can try out the next one.
+
 ## Deployment
 
 The project was deployed on GitHub Pages.
@@ -177,6 +218,55 @@ To deploy a the project I had to:
 - After a couple of minutes the website will be deployed and you will find at the top of the page the link to your website. **(in case you don't see anything, refresh the page)**
 
 The live link can be found here - https://claudiu-ionel.github.io/Body-Sculpting/
+
+## Cloning the repository
+
+If you want to have the files into your local machine these are the steps of the process:
+
+**Prerequisites:**
+
+Before you start, ensure that you have Git Bash installed on your computer. You can download it from the official Git website if you haven't already: https://git-scm.com/downloads .
+
+**Step 1: Open Git Bash**
+
+- Open Git Bash by either searching for it in your computer's applications or right-clicking in the directory where you want to clone the repository and selecting "Git Bash Here."
+- One other option is to go into your **IDE** in my case it is **Visual Studio Code**
+  and click on the **Terminal** button in the top left corner. This will open a terminal section in the bottom.
+  - **Make sure that your terminal type is Git Bash otherwise select it from the list**.
+
+**Step 2: Navigate to the Directory**
+
+- Use the `cd` command to navigate to the directory where you want to clone the repository. You can use the `ls` command to list the contents of the current directory and ensure you're in the right place.
+
+```
+   cd /path/to/your/directory
+```
+
+**Step 3: Clone the Repository**
+
+- Use the `git clone` command followed by the URL of this Git repository.
+
+```
+git clone https://github.com/Claudiu-Ionel/Body-Sculpting.git
+```
+
+**Step 4: Authentication (if required)**
+
+- If the repository is private or requires authentication, Git Bash will prompt you to enter your username and password or access token. Enter the necessary credentials to continue.
+
+**Step 5: Repository Cloning**
+
+- Git Bash will now begin cloning the repository. You will see a progress indicator as it downloads the files and history from the remote repository to your local machine.
+
+**Step 7: Change Directory to the Cloned Repository**
+
+- To work with the cloned repository, change your working directory to the newly created directory (the same name as the repository).
+
+```
+  cd repo  # Replace "repo" with the actual repository name
+```
+
+Alternatively you can [Fork](https://docs.github.com/en/get-started/quickstart/fork-a-repo) this repository ([Body-Sculpting](https://github.com/Claudiu-Ionel/Body-Sculpting)) into your github account.
 
 ## Credits
 
