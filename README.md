@@ -41,6 +41,64 @@ Welcome to **Body Sculpting**! A workout planner app meant to give it's users in
   - Selected exercises, workout routines, and personalized settings are saved locally, ensuring that nothing is lost in the fitness progress.
   - The data remains on the device, enhancing privacy and security. No sensitive information is stored in external servers.
 
+## UX
+
+### Website owner business goals
+
+The main reason to create this website/app is to give users their own personal training space where they can look up information about training routines and use it according to their personal needs. The website owner will present at the end an offer with available prices in order to sustain and maintain the app. (this is not necessary to use the website/app and it is not forced upon the users.)
+
+## User Goals
+
+### New User Goals
+
+- User is able to find information about muscle groups and exercises routines.
+- User can easily find and adapt data according to its needs.
+- User can save it's data on the device used to access the app.
+
+### Returning User Goals
+
+- Users can access previous stored data in the app.
+- Users can try out new workout routines.
+
+## User Stories
+
+### As a website owner
+
+- I want users to use the app freely and meet their own needs.
+- I want my app users to be able to improve their physical and mental condition.
+- I want to improve the data related to fitness and establish connections with instructors. The main point of this is to improve the exercise videos and add high quality and in depth manuals/guide for a healthier life style.
+
+### As a new user
+
+- I want to find information about muscle groups.
+- I want to see video tutorials about exercises.
+- I want to have my own exercise list that I can manage.
+- I want to try out different types of exercises with different levels of difficulty.
+
+### As a returning user
+
+- I want to see my previous exercise list and be motivated by my accomplishments.
+- I want to try out different exercises.
+- I want to see improvements in my physical capabilities and try out the harder workout routines.
+
+## Structure of the website
+
+The website/app is designed to be easy and user-friendly on all types of devices. Navigation is intuitive and simplified. Users can access data just by clicking a button and important sections are highlighted by hover effects or in the case of buttons being disabled they have a different type of cursor. Interaction with the content offers feedback to the users.
+
+## Surface
+
+### Colors
+
+Main colors used in the project:
+
+- main: #003566;
+- main-variant: #001d3d;
+- secondary: #ffc300;
+- secondary-light: #ffdc69;
+- greyish-blue: #4f5d74;
+- dark-greyish-blue: #313a48;
+- light-Cyan: #cee3e9;
+
 ## Technologies used
 
 ### HTML5
