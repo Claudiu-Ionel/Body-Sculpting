@@ -41,6 +41,17 @@ Welcome to **Body Sculpting**! A workout planner app meant to give it's users in
   - Selected exercises, workout routines, and personalized settings are saved locally, ensuring that nothing is lost in the fitness progress.
   - The data remains on the device, enhancing privacy and security. No sensitive information is stored in external servers.
 
+## Future Implementations
+
+- Implement registration/login functionality.
+- Transition from localStorage to a database.
+- Create more than one list and the ability to save and edit them.
+- Add pre-made workout routines that users can add to their list.
+
+### Start Workout feature
+
+- data related to the exercises will be adapted and used into a new interface. This interface will have a timer for each exercise. By clicking on the Start workout button. The user will be provided with a timer in order to perform the exercise, followed by a break timer and this sequence will be repeated until the list of exercises will be completed.
+
 ## UX
 
 ### Website owner business goals
@@ -91,13 +102,17 @@ The website/app is designed to be easy and user-friendly on all types of devices
 
 Main colors used in the project:
 
-- main: #003566;
-- main-variant: #001d3d;
-- secondary: #ffc300;
-- secondary-light: #ffdc69;
-- greyish-blue: #4f5d74;
-- dark-greyish-blue: #313a48;
-- light-Cyan: #cee3e9;
+- main: #003566
+- main-variant: #001d3d
+- secondary: #ffc300
+- secondary-light: #ffdc69
+- greyish-blue: #4f5d74
+- dark-greyish-blue: #313a48
+- light-Cyan: #cee3e9
+
+### Fonts
+
+- As a main font I user **Manrope** and as for backup **sans-serif**
 
 ## Technologies used
 
